@@ -22,7 +22,7 @@ public class ControllerAction extends HttpServlet {
 
 	public void init(ServletConfig config) throws ServletException {
 		// Common properties
-		loadProperties("com/nonage/properties/Command");
+		loadProperties("com/burger/properties/Command");
 	}
 
 	// properties 설정

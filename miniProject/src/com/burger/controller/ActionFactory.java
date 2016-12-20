@@ -30,6 +30,7 @@ import com.burger.controller.action.JoinFormAction;
 import com.burger.controller.action.LoginAction;
 import com.burger.controller.action.LoginFormAction;
 import com.burger.controller.action.LogoutAction;
+import com.burger.controller.action.MenuFormAction;
 import com.burger.controller.action.MyPageAction;
 import com.burger.controller.action.OrderAllAction;
 import com.burger.controller.action.OrderDetailAction;
@@ -101,6 +102,8 @@ public class ActionFactory {
 			action = new QnaWriteAction();
 		} else if (command.equals("qna_view")) {
 			action = new QnaViewAction();
+		} else if (command.equals("menu_form")) {
+			action = new MenuFormAction();
 		}
 
 		// admin

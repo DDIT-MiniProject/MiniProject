@@ -27,7 +27,7 @@ h1, h2, h3, h4, h5, h6 {
 	letter-spacing: 5px;
 }
 
-p {
+p {.
 	font-family: "Playfair Display";
 	letter-spacing: 5px;
 }
