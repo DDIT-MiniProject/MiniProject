@@ -76,7 +76,7 @@ footer {
 	<!-- 헤더 -->
 		<div class="w3-top">
 			<ul class="w3-navbar w3-white w3-wide w3-card-2">
-				<li><a href="#home" class="w3-margin-left"><img
+				<li><a href="#" class="w3-margin-left"><img
 						src="images/log.png"></a></li>
 				<li class="w3-right w3-hide-small"><a href="#"> <span
 						class="glyphicon glyphicon-log-in"></span>Login
