@@ -82,26 +82,26 @@ footer {
 		<!-- Wrapper for slides -->
 		<div class="carousel-inner" role="listbox">
 			<div class="item active">
-				<img src="images/ca_01.jpg" alt="세상에서 가장맛있는 햄버거">
+				<img src="<%=request.getContextPath()%>/images/ca_01.jpg" alt="세상에서 가장맛있는 햄버거">
 				<div class="carousel-caption">
 					<p>Delivery</p>
 				</div>
 			</div>
 
 			<div class="item">
-				<img src="images/ca_02.jpg" alt="세상에서 가장맛있는 햄버거">
+				<img src="<%=request.getContextPath()%>/images/ca_02.jpg" alt="세상에서 가장맛있는 햄버거">
 				<div class="carousel-caption">
 					<p>Event : 12.01~12.31</p>
 				</div>
 			</div>
 			<div class="item">
-				<img src="images/ca_03.jpg" alt="세상에서 가장맛있는 햄버거">
+				<img src="<%=request.getContextPath()%>/images/ca_03.jpg" alt="세상에서 가장맛있는 햄버거">
 				<div class="carousel-caption">
 					<h3>New</h3>
 				</div>
 			</div>
 			<div class="item">
-				<img src="images/ca_04.jpg" alt="세상에서 가장맛있는 햄버거">
+				<img src="<%=request.getContextPath()%>/images/ca_04.jpg" alt="세상에서 가장맛있는 햄버거">
 				<div class="carousel-caption">
 					<h3>New</h3>
 					<p>16.900원</p>
@@ -127,8 +127,8 @@ footer {
 		<div class="row">
 			<table id="table0">
 				<tr id="SmartApp">
-					<td><video src="video/할라피뇨.mp4" controls="controls"
-							poster="images/videoMain.jpg" width="480" height="270"
+					<td><video src="<%=request.getContextPath()%>/video/할라피뇨.mp4" controls="controls"
+							poster="<%=request.getContextPath()%>/images/videoMain.jpg" width="480" height="270"
 							autoplay="autoplay" loop="loop"></video>
 					<td>
 					<td colspan="20">
@@ -139,11 +139,11 @@ footer {
 						<p class="img">
 							<a
 								href="https://itunes.apple.com/us/app/beogeoking/id1017567032?l=es&mt=8"
-								target="_blank" title="새창열림"><img src="images/btn_ios.png"
+								target="_blank" title="새창열림"><img src="<%=request.getContextPath()%>/images/btn_ios.png"
 								alt="ios 버거킹 앱 다운" /></a> <a
 								href="https://play.google.com/store/apps/details?id=kr.co.burgerkinghybrid"
 								target="_blank" title="새창열림"><img
-								src="images/btn_android.png" alt="안드로이드 버거킹 앱 다운" /></a>
+								src="<%=request.getContextPath()%>/images/btn_android.png" alt="안드로이드 버거킹 앱 다운" /></a>
 						</p>
 						<p>
 							<span>버거킹 앱 바로받기</span>
@@ -151,8 +151,8 @@ footer {
 					</td>
 				</tr>
 				<tr id="SNS">
-					<td><video src="video/통새우와퍼.mp4" controls="controls"
-							poster="images/videoMain01.jpg" width="480" height="270"
+					<td><video src="<%=request.getContextPath()%>/video/통새우와퍼.mp4" controls="controls"
+							poster="<%=request.getContextPath()%>/images/videoMain01.jpg" width="480" height="270"
 							autoplay="autoplay" loop="loop"></video></td>
 					<td colspan="20">
 						<p>BURGERKING</p>
@@ -161,11 +161,11 @@ footer {
 						</p>
 						<p class="img">
 							<a href="//twitter.com/burgerking_kor" target="_blank"
-								title="새창열림"><img src="images/btn_twt.png" alt="버거킹 트위터" /></a>
+								title="새창열림"><img src="<%=request.getContextPath()%>/images/btn_twt.png" alt="버거킹 트위터" /></a>
 							<a href="//www.facebook.com/burgerkingkorea" target="_blank"
-								title="새창열림"><img src="images/btn_fb.png" alt="버거킹 페이스북" /></a>
+								title="새창열림"><img src="<%=request.getContextPath()%>/images/btn_fb.png" alt="버거킹 페이스북" /></a>
 							<a href="//www.youtube.com/channel/UCEKRI0fipK4LEgV98nI2CQA "
-								target="_blank" title="새창열림"><img src="images/btn_ytv.png"
+								target="_blank" title="새창열림"><img src="<%=request.getContextPath()%>/images/btn_ytv.png"
 								alt="버거킹 유튜브" /></a>
 						</p>
 						<p>
