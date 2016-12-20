@@ -83,7 +83,7 @@ footer {
 				</a> <a href="#"> <span class="glyphicon glyphicon-log-in"></span>Join
 				</a> <a href="#"> <span class="glyphicon glyphicon-user"></span>Admin
 				</a></li>
-				<li><a href="#about" class="w3-left"><img src="images/order.png"></a> 
+				<li><a href="#about" class="w3-left"><img src="<%=request.getContextPath()%>/images/order.png"></a> 
 					<a href="#menu"	class="w3-left"><img src="images/menu.png"></a> 
 					<a href="#contact" class="w3-left w3-margin-right"><img src="images/store.png"></a> 
 					<a href="#FAQ" class="w3-left w3-margin-right"><img src="images/faq.png"></a>
