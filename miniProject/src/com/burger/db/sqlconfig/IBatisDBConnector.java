@@ -12,7 +12,7 @@ public final class IBatisDBConnector {
 
 	static {
 		try { // 접속설정파일로드
-			String resource = "com/nonage/db/sqlconfig/SqlMapConfig.xml";
+			String resource = "com/burger/db/sqlconfig/SqlMapConfig.xml";
 			Reader reader = Resources.getResourceAsReader(resource);
 			mySQLMap = SqlMapClientBuilder.buildSqlMapClient(reader);
 		}catch (Exception e){
