@@ -35,11 +35,12 @@
 #memberCheck{
    width: auto;
 }
-#loginTable{
+#qnaTable{
    padding: auto;
    margin: auto;
    width: 80%;
    color: gray;
+   border: 1px solid blue;
 }
 </style>
 </head>
@@ -60,7 +61,7 @@
             </div>
             <div class="col-sm-8 text-left">
             <br><br>
-               <table id="loginTable">
+               <table id="qnaTable">
                <tr><td colspan="4"><h1>FAQ</h1></td></tr>
                
                
