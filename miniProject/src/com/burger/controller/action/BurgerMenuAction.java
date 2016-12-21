@@ -12,14 +12,14 @@ import com.burger.dao.ProductDAO;
 import com.burger.dao.iBatis.ProductDAO_iBatis;
 import com.burger.dto.ProductVO;
 
-public class MenuFormAction implements Action{
+public class BurgerMenuAction implements Action{
 
 	@Override
 	public String execute(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		String url="/menu/menuForm.jsp";
+		String url="/menu/burgerMenu.jsp";
 
-	    String kind="12";
+	    String kind="15";
 	    
 	    /*ProductDAO productDAO=ProductDAO_JDBC.getInstance();*/
 	    ProductDAO productDAO=ProductDAO_iBatis.getInstance();   
