@@ -11,8 +11,7 @@
 		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
 	
-	
-	<!-- SiteMesh  -->
+<!-- SiteMesh  -->
 <filter>
 	<filter-name>sitemesh</filter-name>
 	<filter-class>
