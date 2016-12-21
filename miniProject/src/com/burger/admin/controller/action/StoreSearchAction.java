@@ -65,13 +65,10 @@ public class StoreSearchAction implements Action{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		     
 		    request.setAttribute("storeList",allList);
-		    System.out.println(allList.toString());
 		    int n=allList.size();   
 		    request.setAttribute("productListSize",n); 
 		    request.setAttribute("paging", paging);   
-		    
 		    return url;
 		  }
 }
