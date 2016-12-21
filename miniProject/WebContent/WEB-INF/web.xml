@@ -6,6 +6,9 @@
    <servlet-name>ControllerAction</servlet-name> 
    <servlet-class>com.burger.controller.ControllerAction</servlet-class> 
 </servlet> 
+
+
+
 <servlet-mapping> 
    <servlet-name>ControllerAction</servlet-name> 
    <url-pattern>*.do</url-pattern> 
