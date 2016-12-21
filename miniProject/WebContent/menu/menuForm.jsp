@@ -53,7 +53,7 @@
          <div class="row content">
             <div class="col-sm-2 sidenav">
                <p>
-                  <img src="<%=request.getContextPath()%>/images/버거킹회원유무.png" id="memberCheck">
+                  <img src="<%=request.getContextPath()%>/images/menu2.png" id="memberCheck">
                </p>
                <p>
                   <a href="menuForm.do">스페셜오퍼</a>
@@ -82,7 +82,7 @@
                <p>
                   <img src="<%=request.getContextPath()%>/images/주문시유의사항.png" id="warning">
                </p>
-               <c:forEach var="special" items="list">
+               <%-- <c:forEach var="special" items="list">
                <div>
                	  <a href="#"><img src="<%=request.getContextPath()%>/images/specialmenu/리치테이스트팩1.png" width="180px" height="190px"></a>
                	  <a href="#"><img src="<%=request.getContextPath()%>/images/specialmenu/리치테이스트팩2.png" width="180px" height="190px"></a>
@@ -94,7 +94,15 @@
                	  <a href="#"><img src="<%=request.getContextPath()%>/images/specialmenu/리치테이스트오리지널.png" width="180px" height="190px"></a>
                	  <a href="#"><img src="<%=request.getContextPath()%>/images/specialmenu/리치테이스트오리지널세트.png" width="180px" height="190px"></a>
                </div>
-               </c:forEach>
+               </c:forEach> --%>
+               
+               
+                 <c:forEach items="${productList}" var="productVO">
+  
+     			 <a href="#"><img src="<%=request.getContextPath()%>/images/specialmenu/${productVO.name }.png" width="180px" height="190px"></a>
+
+   				 </c:forEach>
+    
             </div>
          </div>
       </div>
