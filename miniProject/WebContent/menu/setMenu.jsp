@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,23 +62,20 @@
                   <a href="deliveryPack.do">딜리버리팩</a>
                </p>
                <p>
-                  <a href="#">세트메뉴</a>
+                  <a href="setMenu.do">세트메뉴</a>
                </p>
                <p>
-                  <a href="#">버거</a>
+                  <a href="burgerMenu.do">버거</a>
                </p>
                <p>
-                  <a href="#">사이드</a>
+                  <a href="sideMenu.do">사이드</a>
                </p>
                <p>
-                  <a href="#">드링크</a>
-               </p>
-               <p>
-                  <a href="#">영양정보</a>
+                  <a href="drinkMenu.do">드링크</a>
                </p>
             </div>
             <div class="col-sm-8 text-left">
-            	<strong><h2>스페셜오퍼 SPECIAL OFFER</h2></strong>
+            	<strong><h2>세트메뉴 SET MENU</h2></strong>
                <p>
                   <img src="<%=request.getContextPath()%>/images/주문시유의사항.png" id="warning">
                </p>
@@ -106,6 +104,11 @@
                	  <a href="#"><img src="<%=request.getContextPath()%>/images/setmenu/베이컨치즈와퍼버거세트.png" width="180px" height="190px"></a>
                	 </div> --%>
                	 
+               	 <c:forEach items="${productList}" var="productVO">
+  
+     			 <a href="#"><img src="<%=request.getContextPath()%>/images/setmenu/${productVO.name }.png" width="180px" height="190px"></a>
+
+   				 </c:forEach>
     
                	 
             </div>
