@@ -1,2 +1,5 @@
 eclipse.preferences.version=1
 encoding//src/com/burger/admin/controller/action/AdminProductListAction.java=UTF-8
+encoding//src/com/burger/admin/controller/action/AdminProductSearchAction.java=UTF-8
+encoding//src/com/burger/admin/controller/action/AdminProductUpdate.java=UTF-8
+encoding//src/com/burger/admin/controller/action/AdminProductUpdateFormAction.java=UTF-8

@@ -23,6 +23,7 @@ public class AdminProductListAction implements Action {
     
     String key=request.getParameter("key");
     String tpage=request.getParameter("tpage");
+    System.out.println(tpage+"111");
     if(key==null){
      key="";
     }    
