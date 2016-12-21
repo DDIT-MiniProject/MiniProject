@@ -87,6 +87,9 @@ table{
     					<td>${store.address }</td>
     					<td>${store.time }</td>
     				</tr>
+    				<tr>
+    					<td colspan="6" style="text-align: center;"> ${paging} </td>
+    				</tr>
     			</c:forEach>
 				</table>
 					<video src="<%=request.getContextPath()%>/video/통새우와퍼.mp4"width="700" height="400" autoplay="autoplay"></video>

@@ -53,11 +53,12 @@ public class StoreSearchAction implements Action{
 		    
 		    /*ProductDAO productDAO=ProductDAO_JDBC.getInstance();*/
 		    StoreDAO storeDAO=StoreDAO_iBatis.getInstance();   
-		    
-		    ArrayList<StoreVO> allList=null;
+		    ArrayList<StoreVO> storeList=null;
 		    String paging=null;
 			try {
-				allList=storeDAO.selectAllStore();
+				/*storeList=storeDAO.selectAllStore();*/
+				storeList=storeDAO.listStore(Integer.parseInt(tpage), key);
+				paging = storeDAO.pageNumber(Integer.parseInt(tpage), key);
 			} catch (NumberFormatException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -65,9 +66,9 @@ public class StoreSearchAction implements Action{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		    request.setAttribute("storeList",allList);
-		    int n=allList.size();   
-		    request.setAttribute("productListSize",n); 
+		    request.setAttribute("storeList",storeList);
+		    int n=storeList.size();   
+		    request.setAttribute("allListSize",n); 
 		    request.setAttribute("paging", paging);   
 		    return url;
 		  }

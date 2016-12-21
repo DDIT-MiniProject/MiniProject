@@ -6,6 +6,7 @@
 
 	<typeAlias alias="str" type="java.lang.String" />
 	<typeAlias alias="store" type="com.burger.dto.StoreVO" />
+	<typeAlias alias="int" type="java.lang.Integer" />
 	
 	<select id="searchStore" parameterClass="str" resultClass="store">
 		select * from store where address like '%'||#address#||'%'
@@ -13,6 +14,15 @@
 	
 	<select id="selectAllStore" parameterClass="str" resultClass="store">
 		select * from store 
-	</select>	
+	</select>
+	
+	<select id="totalRecord" parameterClass="str" resultClass="int">
+		select count(*) from store where name like '%'||#name#||'%'
+	</select>
+
+	<select id="listStore" parameterClass="str" resultClass="store">
+		select * from store where name like '%'||#name#||'%' 
+	</select>
+		
 	
 </sqlMap>
