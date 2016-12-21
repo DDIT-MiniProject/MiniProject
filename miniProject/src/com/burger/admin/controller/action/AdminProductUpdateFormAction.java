@@ -8,14 +8,13 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.burger.controller.action.Action;
 
-public class AdminProductUpdate implements Action {
+public class AdminProductUpdateFormAction implements Action {
 
 	@Override
 	public String execute(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		String url ="AdminProductUpdate.do";
+	    String url="product/ProductUpdate.jsp";
 		return url;
 	}
-	
 
 }

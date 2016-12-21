@@ -2,10 +2,17 @@
 
 <decorators defaultdir="/">
 	<decorator name="main" page="burger_decorator.jsp">
-		<pattern>/*</pattern>
+		<pattern>/</pattern>
+	</decorator>
+	<decorator name="admin" page="admin_decorator.jsp">
+		<pattern>/admin/*</pattern>
 	</decorator>
 	
 	<excludes>
-		<pattern>member/login</pattern>
+	
 	</excludes>
+	
+	
+	
+	
 </decorators>

@@ -81,7 +81,7 @@ footer {
 				<li class="w3-right w3-hide-small">
 					<a href="#"> <span class="glyphicon glyphicon-log-in"></span>Login</a> 
 					<a href="#"> <span class="glyphicon glyphicon-log-in"></span>Join</a> 
-					<a href="#"> <span class="glyphicon glyphicon-user"></span>Admin</a>
+					<a href="adminMain.do"> <span class="glyphicon glyphicon-user"></span>Admin</a>
 				</li>
 				
 				<li>
