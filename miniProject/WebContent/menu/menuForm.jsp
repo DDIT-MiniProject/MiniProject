@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -81,6 +82,7 @@
                <p>
                   <img src="<%=request.getContextPath()%>/images/주문시유의사항.png" id="warning">
                </p>
+               <c:forEach var="special" items="list">
                <div>
                	  <a href="#"><img src="<%=request.getContextPath()%>/images/specialmenu/리치테이스트팩1.png" width="180px" height="190px"></a>
                	  <a href="#"><img src="<%=request.getContextPath()%>/images/specialmenu/리치테이스트팩2.png" width="180px" height="190px"></a>
@@ -92,6 +94,7 @@
                	  <a href="#"><img src="<%=request.getContextPath()%>/images/specialmenu/리치테이스트오리지널.png" width="180px" height="190px"></a>
                	  <a href="#"><img src="<%=request.getContextPath()%>/images/specialmenu/리치테이스트오리지널세트.png" width="180px" height="190px"></a>
                </div>
+               </c:forEach>
             </div>
          </div>
       </div>
