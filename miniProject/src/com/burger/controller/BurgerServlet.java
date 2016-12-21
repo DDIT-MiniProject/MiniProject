@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.burger.controller.action.Action;
 
-@WebServlet("/NonageServlet")
-public class NonageServlet extends HttpServlet {
+@WebServlet("/BurgerServlet")
+public class BurgerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request,
