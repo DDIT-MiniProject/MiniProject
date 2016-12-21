@@ -319,7 +319,7 @@ a.grayscale:hover img, a.grayscale:focus img, a.grayscale:active img{
 	
 	#contents{position:relative;margin-left:179px;padding:0px 0 150px 40px;min-height:500px;border-left:1px solid #ccc;}
 	.full #contents{margin-left:0;padding-left:0;border:0 none;}
-		#location{position:absolute;right:0;top:-34px;} 
+		#location{position:absolute;right:0;top:0px;} 
 			#location > li{float:left;padding-left:7px;background:url(../images/common/bg_location.png) no-repeat left center;}
 			#location > li:first-child{padding-left:0px;background:none}
 			#location > li > a, #location > li > span, #location > li > strong{display:inline-block;padding:0 10px;}

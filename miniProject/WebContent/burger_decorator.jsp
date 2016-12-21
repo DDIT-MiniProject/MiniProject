@@ -76,19 +76,21 @@ footer {
 	<!-- 헤더 -->
 		<div class="w3-top">
 			<ul class="w3-navbar w3-white w3-wide w3-card-2">
-				<li><a href="#" class="w3-margin-left"><img
+				<li><a href="<%=request.getContextPath()%>/index.jsp" class="w3-margin-left"><img
 						src="<%=request.getContextPath()%>/images/log.png"></a></li>
-				<li class="w3-right w3-hide-small"><a href="#"> <span
-						class="glyphicon glyphicon-log-in"></span>Login
-				</a> <a href="#"> <span class="glyphicon glyphicon-log-in"></span>Join
-				</a> <a href="#"> <span class="glyphicon glyphicon-user"></span>Admin
-				</a></li>
-				<li><a href="#about" class="w3-left"><img src="<%=request.getContextPath()%>/images/order.png"></a> 
+				<li class="w3-right w3-hide-small">
+					<a href="#"> <span class="glyphicon glyphicon-log-in"></span>Login</a> 
+					<a href="#"> <span class="glyphicon glyphicon-log-in"></span>Join</a> 
+					<a href="#"> <span class="glyphicon glyphicon-user"></span>Admin</a>
+				</li>
+				
+				<li>
+					<a href="<%=request.getContextPath()%>/orderLayoutForm.jsp" class="w3-left"><img src="<%=request.getContextPath()%>/images/order.png"></a> 
 					<a href="#menu"	class="w3-left"><img src="<%=request.getContextPath()%>/images/menu.png"></a> 
 					<a href="#contact" class="w3-left w3-margin-right"><img src="<%=request.getContextPath()%>/images/store.png"></a> 
 					<a href="#FAQ" class="w3-left w3-margin-right"><img src="<%=request.getContextPath()%>/images/faq.png"></a>
-					</li>
-
+					<a href="#cart" class="w3-right w3-margin-left"><img src="<%=request.getContextPath()%>/images/cart1.png"></a>
+				</li>
 			</ul>
 		</div>
 	<!-- 헤더 -->

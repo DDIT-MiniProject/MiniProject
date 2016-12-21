@@ -1,42 +1,53 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>비회원 주문 | 버거킹 딜리버리</title>
+<script>
+	function non_order_go(form){
+		alert("주문완료되었습니다.");
+	}
+	function mem_order_go(form){
+		location.href="<%=request.getContextPath()%>/memberOrderForm.jsp";
+	}
+</script>
 <style>
-	#non_member_order{
-		font-size: 40pt;
-		font-weight: bold;
-		text-align: center;
-		color: red;
-	}
-	table{
-		border: 1px solid black;
-		margin-left: 30%;
-		margin: auto;
-	}
+#non_member_order {
+	font-size: 40pt;
+	font-weight: bold;
+	text-align: center;
+}
+
+table {
+	margin-left: 30%;
+	margin: auto;
+}
 </style>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<table>
-	<tr>
-	<td colspan="10">
-		<div id="non_member_order">
-		<strong><span>비회원 주문</span></strong>
-	</div>
-	</td>
-	</tr>
-	
-	<tr>
-		<td><h5>버거킹 이용약관</h5></td>
-		<td>
-		<textarea title="버거킹 이용약관" rows="5" cols="70" readonly >
+	<form action="">
+		<table>
+			<tr>
+				<td colspan="10">
+					<div id="non_member_order">
+						<strong><span>비회원 주문</span></strong>
+					</div>
+				</td>
+			</tr>
+
+			<tr>
+				<td><h5>버거킹 이용약관</h5></td>
+				<td><textarea title="버거킹 이용약관" rows="5" cols="70" readonly>
 1.	수집하는 개인정보 항목
    	- 전화번호, 성명, 주소
    	
@@ -52,17 +63,49 @@
 	사용되지 않습니다.	
 	기타 자세한 사항은 '개인정보취급방침'을 참고하여주시기 바랍니다.
 		</textarea></td>
-		<td>
-		<input id="checkNonMember" type="checkbox" class="checkbox" />
-		<span class="lbl">개인정보동의, 개인정보 수집 및 이용에 모두 동의합니다.</span>
-	</td>	
-	</tr>
-	
-	<tr>
-		<td><h5>주소 입력</h5></td>
-		<td><input type="text" name="non_addr" id="adress" size="40"/>
-		<button type="button" class="btn btn-primary">주소 검색</button></td>
-	</tr>
-	</table>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input id="checkNonMember" type="checkbox" class="checkbox" />
+					<span class="lbl">개인정보동의, 개인정보 수집 및 이용에 모두 동의합니다.</span></td>
+			</tr>
+			<tr>
+				<td><h5>주소 입력</h5></td>
+				<td><input type="text" name="non_addr" id="adress" size="33" />
+					<button type="button" class="btn btn-warning">주소 검색</button></td>
+			</tr>
+			
+			<tr>
+				<td><h5>연락처 입력</h5></td>
+				<td>
+				<select>
+					<option>010</option>
+					<option>011</option>
+					<option>016</option>
+				</select>
+				<input type="text" name="non_phone" id="phone" size="10" />-
+				<input type="text" name="non_phone" id="phone" size="10" />
+				<button type="button" class="btn btn-warning">확인</button></td>
+			</tr>
+			
+			<tr>
+				<td></td>
+				<td>
+					<input type="button" class="btn btn-warning btn-lg" value="비회원 주문하기" onclick="non_order_go(this.form)"/>
+					<input type="button" class="btn btn-warning btn-lg" value="회원 주문하기" onclick="mem_order_go(this.form)"/>
+					<input type="button" class="btn btn-danger btn-lg" value="HOME"onclick="location.href='<%=request.getContextPath()%>/index.jsp'"/>
+				</td>
+			</tr>
+			<tr><td>&nbsp;</td></tr>
+			<tr>
+				<td colspan="2">
+					<video src="<%=request.getContextPath()%>/video/할라피뇨.mp4"controls="controls"
+					poster="<%=request.getContextPath()%>/images/videoMain.jpg"
+					width="700" height="400" autoplay="autoplay" loop="loop"></video>
+				</td>
+				</tr>
+		</table>
+	</form>
 </body>
+
 </html>
