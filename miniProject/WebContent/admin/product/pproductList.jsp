@@ -25,7 +25,7 @@
     </div>
     <Br>
     
-    <button type="button" class="btn btn-default" onClick="search_go();">검색</button>
+    <button type="button" class="btn btn-default" onclick="search_go();">검색</button>
     <button type="button" class="btn btn-default">전체보기</button>
     <button type="button" class="btn btn-default">상품등록</button> 
     
