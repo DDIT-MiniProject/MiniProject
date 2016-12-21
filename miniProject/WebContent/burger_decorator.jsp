@@ -88,7 +88,7 @@ footer {
 					<a href="<%=request.getContextPath()%>/orderLayoutForm.jsp" class="w3-left"><img src="<%=request.getContextPath()%>/images/order.png"></a> 
 					<a href="#menu"	class="w3-left"><img src="<%=request.getContextPath()%>/images/menu.png"></a> 
 					<a href="<%=request.getContextPath()%>/storeForm.do" class="w3-left w3-margin-right"><img src="<%=request.getContextPath()%>/images/store.png"></a> 
-					<a href="#FAQ" class="w3-left w3-margin-right"><img src="<%=request.getContextPath()%>/images/faq.png"></a>
+					<a href="<%=request.getContextPath()%>/qnaView.do"  class="w3-left w3-margin-right"><img src="<%=request.getContextPath()%>/images/faq.png"></a>
 					<a href="#cart" class="w3-right w3-margin-left"><img src="<%=request.getContextPath()%>/images/cart1.png"></a>
 				</li>
 			</ul>
