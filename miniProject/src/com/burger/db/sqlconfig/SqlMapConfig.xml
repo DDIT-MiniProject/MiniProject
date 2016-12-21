@@ -45,5 +45,6 @@
 	<sqlMap resource="com/burger/db/sqlmaps/Order.xml" />  
 	<sqlMap resource="com/burger/db/sqlmaps/Qna.xml" />
 	<sqlMap resource="com/burger/db/sqlmaps/Worker.xml" />
-
+	<sqlMap resource="com/burger/db/sqlmaps/Store.xml" />
+	
 </sqlMapConfig>
