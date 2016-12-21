@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -75,31 +75,21 @@
                </p>
             </div>
             <div class="col-sm-8 text-left">
-            	<strong><h2>스페셜오퍼 SPECIAL OFFER</h2></strong>
+            	<strong><h2>드링크 DRINK</h2></strong>
                <p>
                   <img src="<%=request.getContextPath()%>/images/주문시유의사항.png" id="warning">
                </p>
-               <%-- <c:forEach var="special" items="list">
                <div>
-               	  <a href="#"><img src="<%=request.getContextPath()%>/images/specialmenu/리치테이스트팩1.png" width="180px" height="190px"></a>
-               	  <a href="#"><img src="<%=request.getContextPath()%>/images/specialmenu/리치테이스트팩2.png" width="180px" height="190px"></a>
-               	  <a href="#"><img src="<%=request.getContextPath()%>/images/specialmenu/리치테이스트팩3.png" width="180px" height="190px"></a>
-               	  <a href="#"><img src="<%=request.getContextPath()%>/images/specialmenu/스테이크버거.png" width="180px" height="190px"></a>
-               	 </div>
-               	 <div>
-               	  <a href="#"><img src="<%=request.getContextPath()%>/images/specialmenu/스테이크버거세트.png" width="180px" height="190px"></a>
-               	  <a href="#"><img src="<%=request.getContextPath()%>/images/specialmenu/리치테이스트오리지널.png" width="180px" height="190px"></a>
-               	  <a href="#"><img src="<%=request.getContextPath()%>/images/specialmenu/리치테이스트오리지널세트.png" width="180px" height="190px"></a>
-               </div>
-               </c:forEach> --%>
-               
-               
-                 <c:forEach items="${productList}" var="productVO">
+               	  <%-- <a href="#"><img src="<%=request.getContextPath()%>/images/delivery/듀오팩.png" width="180px" height="190px"></a>
+               	  <a href="#"><img src="<%=request.getContextPath()%>/images/delivery/싱글팩.png" width="180px" height="190px"></a> --%>
+               	  
+               	  <c:forEach items="${productList}" var="productVO">
   
-     			 <a href="#"><img src="<%=request.getContextPath()%>/images/specialmenu/${productVO.name }.png" width="180px" height="190px"></a>
+     			 <a href="#"><img src="<%=request.getContextPath()%>/images/drinkmenu/${productVO.name }.png" width="180px" height="190px"></a>
 
    				 </c:forEach>
-    
+               	  
+               	 </div>
             </div>
          </div>
       </div>
