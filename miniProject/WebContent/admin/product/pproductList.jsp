@@ -11,49 +11,54 @@
   
   <style>
   .input-group{width:400px}
+ 
   </style>
 
-   <form name="frm" method="post">
-   <h1>상품리스트</h1>
-    <div class="input-group">
+
+
+  <div class="container">
+  <h2>상품리스트</h2>
+  <form name="frm" method="post">
+<div class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-gift"></i></span>
       <input id="email" type="text" class="form-control" name="key" placeholder="상품명">
     </div>
-     <div class="btn-group">
-    <button type="button" name="btn_search" class="btn btn-primary">검색</button>
-    <button type="button" name="btn_total" class="btn btn-primary">전체보기</button>
-    <button type="button" name="btn_update" class="btn btn-primary">상품등록</button>
-    </div>
-    <br>
-    <br>
+    <Br>
     
-    <table class="table table-condensed">
+    <button type="button" class="btn btn-default" onClick="search_go();">검색</button>
+    <button type="button" class="btn btn-default">전체보기</button>
+    <button type="button" class="btn btn-default">상품등록</button> 
+    
+                                                                                      
+  <div class="table-responsive">          
+  <table class="table">
+   
     <thead>
       <tr>
         <th>번호</th>
         <th>상품명</th>
-        <th>원가</th>
-        <th>판매가</th>
-        <th>등록일</th>
+        <th>가격</th>
+        <th>제품등록일</th>
         <th>사용유무</th>
       </tr>
     </thead>
-    <tbody>
+     <tbody>
     <c:choose>
     <c:when test="${productList.size()<=0 }">
       <tr>
-        <td width="100%" colspan="7" align="center">등록된 상품이 없습니다.</td>
+        <td width="100%" colspan="5" align="center">등록된 상품이 없습니다.</td>
       </tr>
       </c:when>
       <c:otherwise>
+      
       <c:forEach items="${productList }" var="productVO">
+      <tr>
       <td align="center">${productVO.pseq }</td>
-      <td style="text-align: left; padding-left: 50px; padding-right: 0px;">   
+      <td>   
         <a href="#" onClick="go_detail('${tpage}', '${productVO.pseq}')">
     	 ${productVO.name}     
    		</a>
    	  </td>
-      <td><fmt:formatNumber value="${productVO.price1}"/></td>
       <td><fmt:formatNumber value="${productVO.price2}"/></td>
       <td><fmt:formatDate value="${productVO.indate}"/></td>
       <td>
@@ -62,16 +67,45 @@
    	 		<c:otherwise>미사용</c:otherwise>   	 		
    	 	</c:choose>
    	 	</td>	 
+      </tr>
      </c:forEach>
-     <tr><td colspan="6" style="text-align: center;"> ${paging} </td></tr>
+    
+     <tr><td colspan="5" style="text-align: center;"> ${paging} </td></tr>
       </c:otherwise>
      </c:choose>
       </tbody>
       </table>
+      </div>
+      </form>
+      </div>
+      
       
     
     
-    </form>
+    
+    </body>
+    <script>
+    function search_go(){
+    	document.frm.action = "adminProductSearch.do";
+        document.frm.submit();
+    }
+    
+    </script>
+    
+   
+    </html>
+
+  
+
+
+
+
+
+
+
+
+
+
 
 
 

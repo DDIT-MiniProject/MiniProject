@@ -38,9 +38,9 @@
     </thead>
      <tbody>
       <tr>
-        <td> <span class="badge">12</span></td>
-        <td> <span class="badge">12</span></td>
-        <td> <span class="badge">12</span></td>
+        <td> <span class="badge"><h3>12</h3></span></td>
+        <td> <span class="badge"><h3>12</h3></span></td>
+        <td> <span class="badge"><h3>12</h3></span></td>
       </tr>
       </tbody>
     </table>
