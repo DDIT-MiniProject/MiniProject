@@ -1,105 +1,63 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="UTF-8">
-<title>간단한 지도 표시하기</title>
-<!-- http://openapi.map.naver.com/api/geocode.php?key=nx38JVlPNEar_o9yTq_k&encoding=utf-8&coord=tm128&query=강남버거킹; -->
-<script type="text/javascript"
-	src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=T9vcbeJJCFtzV0otN6HB"></script>
+<title></title>
+<style>
+table {
+	border: 1px black solid;
+}
+</style>
 </head>
 <body>
-	<input type="button" class="btn btn-danger btn-lg" value="HOME"onclick="location.href='<%=request.getContextPath()%>/index.jsp'"/>
-	<div id="map" style="width: 100%; height: 400px;"></div>
-		<script type="text/javascript">
-		nhn.map.Bootstrap
-				.setup(
-						{
-							moduleroot : "/js2/compact/",
-							timeStamp : "_v1481850310607",
-							apiTimeStamp : "_v1480322581312",
-							env : {
-								bugreportURL : "https://report.map.naver.com/form.nhn",
-								mashup : {},
-								hasMashUp : false,
+	<form action="">
+		<div class="container-fluid text-center">
+			<div class="row content">
+				<div class="col-sm-2 sidenav">
+					<p>
+						<img src="<%=request.getContextPath()%>/images/버거킹회원유무.png"
+							id="memberCheck">
+					</p>
+					<p>
+						<a href="orderMenu.do">회원주문</a>
+					</p>
+					<p>
+						<a href="<%=request.getContextPath()%>/orderForm.jsp">비회원주문</a>
+					</p>
+					<p>
+                  		<a href="orderMenu.do">스페셜오퍼</a>
+              		 </p>
+				</div>
+				<div class="col-sm-8 text-left">
+					<table id="loginTable">
+						<tr>
+							<td colspan="4">
+							<h1>BURGER KING 회원 주문</h1>
+							</td>
+						</tr>
+						<tr>
+							<td>
+							<input type="button" class="btn btn-warning btn-lg"	value="주문하기" />
+							<input type="button" class="btn btn-primary btn-lg"value="홈으로" onclick="location.href='<%=request.getContextPath()%>/index.jsp'"/>
+							</td>
+						</tr>
+					</table>
+				 <c:forEach items="${productList}" var="productVO">
+		   			<a href="#"><img src="<%=request.getContextPath()%>/images/specialmenu/${productVO.name }.png" width="180px" height="190px"></a>
+   				 </c:forEach>
+   				 
+					<video src="<%=request.getContextPath()%>/video/콰트로치즈와퍼.mp4"controls="controls"
+					width="1000" height="400" autoplay="autoplay" loop="loop"></video>
+				</div>
+			</div>
+		</div>
 
-								home : {
-									"result" : {
-										"code" : "0",
-										"totalCount" : "1",
-										"region" : null,
-										"favorites" : null,
-										"category" : null,
-										"type" : "REGION_HOME",
-										"banner" : {
-											"title" : "플레이스DB 이용자 프로모션",
-											"imageUrl" : "http://static.naver.net/maps/img/banner_place_main_v2.png ",
-											"width" : "316",
-											"height" : "66",
-											"link" : "http://blog.naver.com/naver_map/220822309327 ",
-											"target" : "_blank",
-											"nclickCode" : "lbn.banner1"
-										},
-										"bannerForRoute" : {
-											"title" : "플레이스DB 이용자 프로모션",
-											"imageUrl" : "http://static.naver.net/maps/img/banner_place_main_v2.png ",
-											"width" : "316",
-											"height" : "66",
-											"link" : "http://blog.naver.com/naver_map/220822309327 ",
-											"target" : "_blank",
-											"nclickCode" : "lbn.banner1"
-										},
-										"userIP" : "1.212.157.149",
-										"ipTargeting" : "N",
-										"serverTime" : "1482294845518"
-									}
-								},
-								param : {
-									"mapMode" : "0",
-									"lng" : "127.419984",
-									"pinId" : "12454435",
-									"pinType" : "site",
-									"lat" : "36.324852",
-									"dlevel" : "11",
-									"level" : "2",
-									"menu" : "location",
-									"ipTargeting" : "N"
-								},
-								client : {
-									x : "127.4259",
-									y : "36.320342",
-									address : "대전광역시 중구 대흥동",
-									subwayRegion : "3000"
-								},
-								version : {
-									"flash" : "_v1481850310607"
-								},
-								panorama : {
-									metaDomain : "pvxml.map.naver.com"
-								},
-								theme : {
-									config : {
-										"mappletImageUploaderUrl" : "/mapplet/uploadImage.nhn"
-									}
-								},
-								serverPhase : "real",
-								serverTimestamp : "1482294845583",
-								user : {
-									id : "vallo_follow",
-									email : "vallo_follow@naver.com"
-								},
-								hmacToken : {
-									"token" : "RRtrY/E8jFUNvFIC/NHDQxTC+wI=",
-									"randomKey" : "rc2FyUDz1I9itHke",
-									"expireTime" : "1482296400000"
-								},
-								jsTimestamp : "_v1481850310607"
-
-							}
-						}).boot();
-	</script>
+	</form>
 
 </body>
 </html>

@@ -9,10 +9,16 @@
 <title>비회원 주문 | 버거킹 딜리버리</title>
 <script>
 	function non_order_go(form){
-		alert("주문완료되었습니다.");
+		var test = document.getElementById('checkNonMember');
+		if($(checkNonMember).prop("checked")){
+			alert("주문완료되었습니다.");
+		}else{
+			alert("수집목적 동의에 체크를 해주세요");		
+		}
 	}
 	function mem_order_go(form){
-		location.href="<%=request.getContextPath()%>/memberOrderForm.jsp";
+		form.action = "orderMenu.do";
+		form.submit(); 
 	}
 </script>
 <style>

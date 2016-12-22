@@ -59,10 +59,10 @@ function non_order_go(form){
 						<img src="<%=request.getContextPath()%>/images/버거킹회원유무.png" id="memberCheck">
 					</p>
 					<p>
-						<a href="<%=request.getContextPath()%>/orderLayoutForm.jsp">로그인</a>
+						<a href="loginForm.do">로그인</a>
 					</p>
 					<p>
-						<a href="#">회원가입</a>
+						<a href="joinForm.do">회원가입</a>
 					</p>
 					<p>
 						<a href="#">아이디/비밀번호찾기</a>
