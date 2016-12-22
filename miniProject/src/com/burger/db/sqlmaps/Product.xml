@@ -43,8 +43,8 @@
 
 	<update id="insertProduct" parameterClass="product">
 		insert into product
-		(pseq, kind, name, price1, price2, price3, content, image)
-		values(product_seq.nextval, #kind#,#name#,#price1#, #price2#,#price3#,
+		(pseq, kind, name, price2, content, image)
+		values(product_seq.nextval, #kind#,#name#, #price2#,
 		#content#,#image#)
 	</update>
 
@@ -53,6 +53,11 @@
 		kind=#kind#, useyn=#useyn#, name=#name#, price1=#price1#, price2=#price2#, price3=#price3#, content=#content#,
 		image=#image#, bestyn=#bestyn#
 		where pseq=#pseq#
+	</update>
+	
+	<update id="deleteProduct" parameterClass="str">
+	   delete from product
+	   where pseq=#pseq#
 	</update>
 
 </sqlMap>

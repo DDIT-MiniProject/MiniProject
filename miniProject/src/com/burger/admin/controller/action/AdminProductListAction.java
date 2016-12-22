@@ -30,7 +30,7 @@ public class AdminProductListAction implements Action {
     if(tpage== null){
       tpage="1"; //�쁽�옱 �럹�씠吏� (default 1)                        
     }else if(tpage.equals("")){
-       tpage="1";  
+         
     }
     request.setAttribute("key", key);
     request.setAttribute("tpage",tpage);
