@@ -17,7 +17,7 @@
    
 <script>
 function cart_go(form){
-	location.href="<%=request.getContextPath()%>/cartForm.do?pseq=${productVO.pseq}"
+	location.href="<%=request.getContextPath()%>/cartInsert.do?pseq=${productVO.pseq}"
 }
 </script>
 <style>

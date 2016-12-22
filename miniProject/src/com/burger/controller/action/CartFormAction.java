@@ -13,6 +13,7 @@ import com.burger.dao.CartDAO;
 import com.burger.dao.iBatis.CartDAO_iBatis;
 import com.burger.dto.CartVO;
 import com.burger.dto.MemberVO;
+import com.burger.dto.ProductVO;
 
 public class CartFormAction implements Action{
 
@@ -26,7 +27,7 @@ public class CartFormAction implements Action{
 		
 		HttpSession session = request.getSession();
 		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
-		
+
 		
 		if (loginUser != null) { //나중에 수정 지금은 not null로 
 			url = "loginForm.do";

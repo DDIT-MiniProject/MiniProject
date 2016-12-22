@@ -44,6 +44,10 @@
    width: 80%;
    color: gray;
 }
+
+table{
+	text-align : center;
+}
 </style>
 
 </head>
@@ -66,19 +70,19 @@
 					<li>버거킹 딜리버리 서비스는 배달 가능 주소 내 서비스를 제공합니다. 배달주소 변경 시 장바구니 상품은 삭제됩니다.
 					<li>버거킹 최소 배달 금액은 8,000원 입니다.</li>
 				</ul>
-				
+				<hr color="grey"/>
 				<table>
 					<tr>
-						<td>상품명</td>
-						<td>수량</td>
-						<td>상품가격</td>
-						<td>비고</td>
+						<td width="100px">상품명</td>
+						<td width="100px">수량</td>
+						<td width="100px">상품가격</td>
+						<td width="100px">비고</td>
 						
-						<c:forEach items="${carttList}" var="cartVO">
+						<c:forEach items="${cartList}" var="cartVO">
 						<tr>
 							<td>${cartVO.cseq }</td>
 							<td>${cartVO.quantity }</td>
-							<td>${cartVO.result }</td>
+							<td>${cartVO.id }</td>
 							<td><a href="#">수정</a>/<a href="#">삭제</a></td>
 						</tr>
 						</c:forEach>
