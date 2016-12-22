@@ -12,7 +12,7 @@ public class CartFormAction implements Action{
 	public String execute(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 
-		String url="cartForm.jsp";
+		String url="/cart/cartForm.jsp";
 		return url;
 	}
 
