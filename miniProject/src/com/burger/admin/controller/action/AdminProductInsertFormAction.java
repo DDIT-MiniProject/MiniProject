@@ -1,12 +1,14 @@
 package com.burger.admin.controller.action;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.burger.controller.action.Action;
+import com.burger.dto.KindVO;
 
 public class AdminProductInsertFormAction implements Action {
 
@@ -14,9 +16,33 @@ public class AdminProductInsertFormAction implements Action {
 	public String execute(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		String url="product/productInsert.jsp";
+		/*KindVO kindVO =null;
+        kindVO.setKind("ï¿½ï¿½ï¿½ï¿½È¿ï¿½ï¿½ï¿½");
+        System.out.println(kindVO.getKind());
+        kindVO.setKindNum("12");
+        ArrayList<KindVO> list = null;
+        list.add(kindVO);
+        kindVO.setKind("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+        kindVO.setKindNum("13");
+        list.add(kindVO);
+        kindVO.setKind("ï¿½ï¿½Æ®ï¿½Ş´ï¿½");
+        kindVO.setKindNum("14");
+        list.add(kindVO);
+        kindVO.setKind("ï¿½ï¿½ï¿½ï¿½");
+        kindVO.setKindNum("15");
+        list.add(kindVO);
+        kindVO.setKind("ï¿½ï¿½ï¿½Ìµï¿½");
+        kindVO.setKindNum("16");
+        list.add(kindVO);
+        kindVO.setKind("ï¿½å¸µÅ©");
+        kindVO.setKindNum("17");
+        list.add(kindVO);*/
+        
+        
 		
-		String kindList[] = { "½ºÆä¼È¿ÀÆÛ", "µô¸®¹ö¸®ÆÑ", "¼¼Æ®¸Ş´º", "¹ö°Å",
-		        "»çÀÌµå", "µå¸µÅ©" };    
+		
+		String kindList[] = { "ìŠ¤í˜ì…œì˜¤í¼", "ë”œë¦¬ë²„ë¦¬íŒ©", "ì„¸íŠ¸ë©”ë‰´", "ë²„ê±°",
+		        "ì‚¬ì´ë“œ", "ë“œë§í¬" };    
 		    request.setAttribute("kindList", kindList);
 		    
 		return url;

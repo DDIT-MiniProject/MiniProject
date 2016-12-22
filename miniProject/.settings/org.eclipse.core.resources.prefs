@@ -5,4 +5,6 @@ encoding//src/com/burger/admin/controller/action/AdminProductSearchAction.java=U
 encoding//src/com/burger/admin/controller/action/AdminProductUpdate.java=UTF-8
 encoding//src/com/burger/admin/controller/action/AdminProductUpdateFormAction.java=UTF-8
 encoding//src/com/burger/dao/ProductDAO.java=UTF-8
+encoding//src/com/burger/dao/QnaDAO.java=UTF-8
 encoding//src/com/burger/dao/iBatis/ProductDAO_iBatis.java=UTF-8
+encoding//src/com/burger/dao/iBatis/QnaDAO_iBatis.java=UTF-8

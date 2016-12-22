@@ -42,11 +42,11 @@ public class QnaDAO_iBatis implements QnaDAO {
 	}
 
 	/* *
-	 * 관리자 모드에서 필요한 메소드
+	 * 愿�由ъ옄 紐⑤뱶�뿉�꽌 �븘�슂�븳 硫붿냼�뱶
 	 */
 	public ArrayList<QnaVO> listAllQna() throws SQLException {
 		ArrayList<QnaVO> qnaList = new ArrayList<QnaVO>();
-		// 게시판의 데이터를 가지고 오는 쿼리 rep:1:게시물 2: 답변
+		
 		qnaList=(ArrayList<QnaVO>)client.queryForList("listAllQna",null);
 		return qnaList;
 	}

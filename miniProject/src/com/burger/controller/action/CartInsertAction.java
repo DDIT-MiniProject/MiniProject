@@ -29,7 +29,7 @@ public class CartInsertAction implements Action {
 		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
 		ProductVO product = (ProductVO) session.getAttribute("productVO");
 		
-		if (loginUser != null) { //임시방편으로 not null
+		if (loginUser == null) { //임시방편으로 not null
 			url = "loginForm.do";
 		} else {
 			CartVO cartVO = new CartVO();

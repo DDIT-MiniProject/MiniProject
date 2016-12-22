@@ -27,7 +27,7 @@ public class CartFormAction implements Action{
 		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
 
 		
-		if (loginUser != null) { //나중에 수정 지금은 not null로 
+		if (loginUser == null) { //나중에 수정 지금은 not null로 
 			url = "loginForm.do";
 		} else {
 			CartDAO cartDAO = CartDAO_iBatis.getInstance();

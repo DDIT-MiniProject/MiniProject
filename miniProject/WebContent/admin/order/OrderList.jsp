@@ -57,11 +57,11 @@
     <td>
       <c:choose>
         <c:when test='${orderVO.result=="1"}'>
-        <span style="font-weight: bold; color: blue">${orderVO.odseq}</span>
+        <span style="font-weight: bold; color: red">${orderVO.odseq}</span>
         (<input type="checkbox" name="result" value="${orderVO.odseq}"> 미처리)
         </c:when>
         <c:otherwise>
-          <span style="font-weight: bold; color: red">${orderVO.odseq}</span>
+          <span style="font-weight: bold; color: green">${orderVO.odseq}</span>
           (<input type="checkbox" checked="checked" disabled="disabled">처리완료)
         </c:otherwise>
       </c:choose>
@@ -76,7 +76,7 @@
   </table>
   
   <input type="button" class="btn btn-default" style="width: 200px"
-      value="배송처리(입금확인)" id="savebtn" onClick="go_order_save()">
+      value="배송처리(입금확인)" id="savebtn">
     
      </div>    
 </form>
