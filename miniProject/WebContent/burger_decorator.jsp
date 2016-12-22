@@ -89,7 +89,7 @@ footer {
 					<c:otherwise>
 						<a href="loginForm.do"> <span class="glyphicon glyphicon-log-in"></span>Login</a>
 						<a href="joinForm.do"> <span class="glyphicon glyphicon-log-in"></span>Join</a>
-						<a href="adminMain.do"> <span class="glyphicon glyphicon-user"></span>Admin</a>
+						<a href="admin/adminLoginForm.do"> <span class="glyphicon glyphicon-user"></span>Admin</a>
 					</c:otherwise>
 				</c:choose>
 
