@@ -10,6 +10,14 @@
 function non_order_go(form){
 	location.href="<%=request.getContextPath()%>/orderForm.jsp";
 }
+function go_join(form){
+	form.action="joinForm.do";
+	form.submit();
+}
+function go_login(form){
+	form.action="login.do";
+	form.submit();
+}
 </script>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -51,7 +59,7 @@ function non_order_go(form){
 </style>
 </head>
 <body>
-	<form action="">
+	<form action="loginForm.do">
 		<div class="container-fluid text-center">
 			<div class="row content">
 				<div class="col-sm-2 sidenav">
@@ -90,7 +98,7 @@ function non_order_go(form){
 							<tr>
 								<td><div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-	      							<input id="email" type="text" class="form-control" name="email" placeholder="이메일 주소 입력">
+	      							<input type="text" class="form-control" name="id" placeholder="아이디를 입력하세요">
     							</div></td>
     							<td>&nbsp;</td>
     							<td>&nbsp;</td>
@@ -100,7 +108,7 @@ function non_order_go(form){
     						</tr>
 							<tr><td> <div class="input-group">
       							<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-      							<input id="password" type="password" class="form-control" name="password" placeholder="비밀번호(영문/숫자조합8~15)">
+      							<input type="password" class="form-control" name="pwd" placeholder="비밀번호(영문/숫자조합8~15)">
     						</div></td></tr>
     						
     						<tr>
@@ -109,7 +117,7 @@ function non_order_go(form){
     						
     						<tr>
 							<td colspan="2"><input type="checkbox">회원정보저장
-							<button type="button" class="btn btn-warning btn-lg">로그인</button>
+							<input type="button" class="btn btn-warning btn-lg" value="로그인" onclick="go_login(this.form)"/>
 							</td>
 							
 							
@@ -117,7 +125,7 @@ function non_order_go(form){
 							
 							<tr>
 							<td>회원가입을 하시면 더 많은 혜택이 있습니다. &nbsp;&nbsp;
-								<button type="button" class="btn btn-primary btn-sm">회원가입</button>
+								<input type="button" class="btn btn-primary btn-sm" value="회원가입" onclick="go_join(this.form)"/>
 							</td>
 							</tr>
 							
