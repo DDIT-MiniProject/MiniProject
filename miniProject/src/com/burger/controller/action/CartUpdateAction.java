@@ -27,7 +27,7 @@ public class CartUpdateAction implements Action{
 		HttpSession session = request.getSession();
 		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
 		CartDAO cartDAO = CartDAO_iBatis.getInstance();
-		
+		/*
 		if (loginUser != null) { //임시방편으로 not null
 			url = "loginForm.do";
 		} else {
@@ -43,7 +43,7 @@ public class CartUpdateAction implements Action{
 			} catch (SQLException e) {				
 				e.printStackTrace();
 			}
-		}
+		}*/
 		return url;	
 	}
 

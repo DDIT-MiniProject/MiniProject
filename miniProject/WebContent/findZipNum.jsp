@@ -57,7 +57,7 @@ table#zipcode a:hover{
 </style>
 <script type="text/javascript">
 function result(zipNum,sido,gugun,dong) {
-	alert(zipNum);
+	/* alert(zipNum); */
    	  opener.document.form.zipNum.value=zipNum;
 	  opener.document.form.addr1.value=sido+" "+gugun+" "+dong;
    self.close();

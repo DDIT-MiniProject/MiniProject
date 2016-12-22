@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <title>회원 유무 확인 페이지</title>
 <script type="text/javascript">
 function join_go(form){
@@ -34,6 +34,7 @@ function join_go(form){
 		  form.pwd.focus();
 	  } else {
 		  form.action = "join.do";
+		  alert("회원가입을 축하드립니다.");
 		  form.submit(); 
 	  }
 	 /*  if($(agreeCheck).prop("checked")){
@@ -74,7 +75,7 @@ function searchZip(form){
 <style>
 /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
 .row.content {
-	height: 450px
+	height: auto;
 }
 /* Set gray background color and 100% height */
 .sidenav {
@@ -101,6 +102,10 @@ function searchZip(form){
 	color: gray;
 	font-family: "궁서체" ,"Times New Roman", Georgia, Serif;
 }
+#joinTable{
+	margin: auto;
+	font-size: 17pt;
+}
 /* #btn{
 	font-size: 30pt;
 	font-family: "1훈하얀고양이" ,"Times New Roman", Georgia, Serif;
@@ -116,16 +121,16 @@ function searchZip(form){
 						<img src="<%=request.getContextPath()%>/images/버거킹회원유무.png">
 					</p>
 					<p>
-						<a href="joinForm.do">회원가입</a>
+						<a href="loginForm.do">로그인</a>
 					</p>
 					<p>
-						<a href="loginForm.do">로그인</a>
+						<a href="joinForm.do">회원가입</a>
 					</p>
 					<p>
 						<a href="#">아이디/비밀번호찾기</a>
 					</p>
 					<p>
-						<a href="<%=request.getContextPath()%>/orderForm.jsp">비회원주문</a>
+						<%-- <a href="<%=request.getContextPath()%>/orderForm.jsp">비회원주문</a> --%>
 					</p>
 				</div>
 				<div class="col-sm-8 text-left">
@@ -134,7 +139,7 @@ function searchZip(form){
 						<tr><td><h3>약관동의</h3></td></tr>
 						<tr><td><h3>버거킹 이용약관</h3>	</td></tr>
 							</table>
-<textarea title="버거킹 이용약관" rows="5" cols="100" readonly>
+<textarea title="버거킹 이용약관" id="con" rows="5" cols="100" readonly>
 제 1장 총칙 
 제 1조 (목적) 
 	본 약관은 주식회사 비케이알(이하 '당사')가 제공하는 모든 서비스(이하 '서비스')의 이용조건 및 절차, 이용자와 당사의 권리, 의무, 책임사항과 기타 필요한 사항을 규정함을 목적으로 합니다.

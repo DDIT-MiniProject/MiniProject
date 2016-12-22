@@ -7,9 +7,9 @@
 <meta charset="UTF-8">
 <title>회원 유무 확인 페이지</title>
 <script type="text/javascript">
-function non_order_go(form){
+<%-- function non_order_go(form){
 	location.href="<%=request.getContextPath()%>/orderForm.jsp";
-}
+} --%>
 function go_join(form){
 	form.action="joinForm.do";
 	form.submit();
@@ -75,21 +75,21 @@ function go_login(form){
 					<p>
 						<a href="#">아이디/비밀번호찾기</a>
 					</p>
-					<p>
+				<%-- 	<p>
 						<a href="<%=request.getContextPath()%>/orderForm.jsp">비회원주문</a>
-					</p>
+					</p> --%>
 				</div>
 				<div class="col-sm-8 text-left">
 					<table id="loginTable">
-					<tr><td colspan="4"><h1>BURGER KING 로그인</h1></td></tr>
+					<tr><td colspan="4"><h1>BURGER KING 로그인</h1></td><td rowspan="11"><video src="<%=request.getContextPath()%>/video/콰트로치즈와퍼.mp4"controls="controls"
+								width="400" height="400" autoplay="autoplay" loop="loop"></video></td></tr>
 						<tr><td><h3>회원로그인</h3></td>
-							<td>&nbsp;</td>
-							<td>&nbsp;</td>
-							<td>
+							
+						<!-- 	<td>
 								<h3>비회원 주문</h3>
 								<input type="radio">주문조회<input type="radio">주문하기
 								<input type="button" class="btn btn-warning btn-lg" value="비회원주문" onclick="non_order_go(this.form)"/>
-							</td>
+							</td> -->
 							
 							<tr>
     							<td>&nbsp;</td>
@@ -98,17 +98,17 @@ function go_login(form){
 							<tr>
 								<td><div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-	      							<input type="text" class="form-control" name="id" placeholder="아이디를 입력하세요">
+	      							<input type="text" name="id" size="30" placeholder="아이디를 입력하세요" >
     							</div></td>
     							<td>&nbsp;</td>
     							<td>&nbsp;</td>
-    							<td rowspan="2"><p>회원가입 없이 비회원으로 주문이 가능합니다.<br>
+    							<!-- <td rowspan="2"><p>회원가입 없이 비회원으로 주문이 가능합니다.<br>
     											비회원 주문 시 간단한 휴대폰 인증 후 고객님의 배송지 확인 후<br> 
-    											회원과 동일한 서비스를 이용하실 수 있습니다.</p></td>
+    											회원과 동일한 서비스를 이용하실 수 있습니다.</p></td> -->
     						</tr>
 							<tr><td> <div class="input-group">
       							<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-      							<input type="password" class="form-control" name="pwd" placeholder="비밀번호(영문/숫자조합8~15)">
+      							<input type="password" name="pwd" size="30" placeholder="비밀번호">
     						</div></td></tr>
     						
     						<tr>
@@ -116,7 +116,8 @@ function go_login(form){
     						</tr>
     						
     						<tr>
-							<td colspan="2"><input type="checkbox">회원정보저장
+							<!-- <td colspan="2"><input type="checkbox">회원정보저장 -->
+							<td>
 							<input type="button" class="btn btn-warning btn-lg" value="로그인" onclick="go_login(this.form)"/>
 							</td>
 							
@@ -143,7 +144,7 @@ function go_login(form){
 							<td></td>
 						</tr>					
 					</table>
-					<img src="<%=request.getContextPath()%>/images/joinIma.jpg">
+					<%-- <img src="<%=request.getContextPath()%>/images/joinIma.jpg"> --%>
 				</div>
 			</div>
 		</div>

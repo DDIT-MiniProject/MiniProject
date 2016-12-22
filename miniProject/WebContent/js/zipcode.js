@@ -1,7 +1,4 @@
-
-
-
-<!DOCTYPE html> 
+/*<!DOCTYPE html> 
 <html lang="ko">
 <head>
 	<meta charset="utf-8">
@@ -203,7 +200,7 @@
 	$('#price_all').text(price_calculation().money() + "원");		
 	$('.cart_btn').trigger('click');
 
-/* 	if ($('.cart_view').css('display') == "block") {
+ 	if ($('.cart_view').css('display') == "block") {
 
 		var cartTimer = null;
 		
@@ -212,7 +209,7 @@
 		cartTimer = setTimeout(function(){		// 장바구니 담고 2초후 닫기
 			$('.btn_cartClose').trigger('click');
 	    },2000);     
-	}	 */
+	}	 
 		
 	quick_cart_check(price_calculation());
 	
@@ -598,3 +595,4 @@
 	<!-- //wrap -->
 </body>
 </html>
+*/

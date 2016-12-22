@@ -76,8 +76,8 @@ table{
 	      		</table>
 	      		<table>
 					<tr>
-    					<th>주소</th>
     					<th>매장명</th>
+    					<th>주소</th>
     					<th>이용가능시간</th>
     				</tr>
     			<c:forEach var="store" items="${storeList }" varStatus="status">
