@@ -12,7 +12,7 @@ import com.burger.controller.action.Action;
 import com.burger.dao.OrderDAO;
 import com.burger.dao.iBatis.OrderDAO_iBatis;
 import com.burger.dto.OrderVO;
-
+//
 public class AdminOrderListAction implements Action {
 
 	@Override
