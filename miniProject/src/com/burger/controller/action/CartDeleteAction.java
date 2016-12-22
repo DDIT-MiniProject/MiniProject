@@ -16,35 +16,45 @@ import com.burger.dto.CartVO;
 import com.burger.dto.MemberVO;
 import com.burger.dto.ProductVO;
 
-public class CartInsertAction implements Action {
+public class CartDeleteAction implements Action {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		String url = "cartForm.do";
-		String pseq = request.getParameter("pseq");
+		int cseq = Integer.parseInt(request.getParameter("cseq"));
 		
 		HttpSession session = request.getSession();
 		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
-		ProductVO product = (ProductVO) session.getAttribute("productVO");
 		
-		if (loginUser != null) { //임시방편으로 not null
+		CartVO cartVO = null;
+		CartDAO cartDAO = CartDAO_iBatis.getInstance();
+		try {
+			cartDAO.deleteCart(cseq);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		/*if (loginUser != null) { //임시방편으로 not null
 			url = "loginForm.do";
 		} else {
 			CartVO cartVO = new CartVO();
 			cartVO.setId("one");
-			cartVO.setPseq(product.getPseq());
-			cartVO.setQuantity(Integer.parseInt(request.getParameter("quantity")));
-			cartVO.setPname(product.getName());
-			cartVO.setPrice2(product.getPrice2());
+			cartVO.setPseq(Integer.parseInt(pseq));
+			cartVO.setQuantity(1);
+			cartVO.setPname(request.getParameter("pname"));
+			System.out.println(request.getParameter("price2"));
+			//cartVO.setPrice2(Integer.parseInt(request.getParameter("price2")));
 			CartDAO cartDAO = CartDAO_iBatis.getInstance();
 			try {
 				cartDAO.insertCart(cartVO);
 			} catch (SQLException e) {				
 				e.printStackTrace();
 			}
-		}
+		}*/
 		return url;
 	}
 
