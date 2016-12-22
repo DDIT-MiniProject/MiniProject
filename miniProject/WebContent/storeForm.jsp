@@ -8,11 +8,10 @@
 <meta charset="UTF-8">
 <title>회원 유무 확인 페이지</title>
 <script type="text/javascript">
-function storeSearch(form){
-	var theForm = document.form;
-	var key=document.form.key.value;
-	theForm.action = "adminProductSearch.do?key="+key;
-	theForm.submit();
+function searchCheck(form){
+	var key = form.key.value;
+	form.action = "searchStore.do?key="+key;
+	form.submit();
 }
 </script>
 <link rel="stylesheet"
@@ -49,7 +48,7 @@ table{
 </style>
 </head>
 <body>
-	<form action="">
+	<form>
 		<div class="container-fluid text-center">
 			<div class="row content">
 				<div class="col-sm-2 sidenav">
@@ -87,10 +86,10 @@ table{
     					<td>${store.address }</td>
     					<td>${store.time }</td>
     				</tr>
+    			</c:forEach>
     				<tr>
     					<td colspan="6" style="text-align: center;"> ${paging} </td>
     				</tr>
-    			</c:forEach>
 				</table>
 					<video src="<%=request.getContextPath()%>/video/통새우와퍼.mp4"width="700" height="400" autoplay="autoplay"></video>
 				</div>

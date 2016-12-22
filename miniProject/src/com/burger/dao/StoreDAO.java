@@ -16,6 +16,6 @@ public interface StoreDAO {
 
 	public ArrayList<StoreVO> listStore(int tpage, String name)throws SQLException;
 
-	int totalRecord(String name) throws SQLException;
+	int storeTotalRecord(String name) throws SQLException;
 	
 }

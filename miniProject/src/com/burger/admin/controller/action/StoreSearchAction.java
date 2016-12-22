@@ -56,7 +56,7 @@ public class StoreSearchAction implements Action{
 		    ArrayList<StoreVO> storeList=null;
 		    String paging=null;
 			try {
-				/*storeList=storeDAO.selectAllStore();*/
+				storeList=storeDAO.selectAllStore();
 				storeList=storeDAO.listStore(Integer.parseInt(tpage), key);
 				paging = storeDAO.pageNumber(Integer.parseInt(tpage), key);
 			} catch (NumberFormatException e) {

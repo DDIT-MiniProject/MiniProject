@@ -33,17 +33,17 @@ public class StoreDAO_iBatis implements StoreDAO {
 	}
 	
 	@Override
-	public int totalRecord(String name) throws SQLException {
+	public int storeTotalRecord(String name) throws SQLException {
 		int total_pages = 0;
 		if (name.equals("")) {
 			name = "%";
 		}
-		total_pages = (Integer)client.queryForObject("totalRecord",name);
+		total_pages = (Integer)client.queryForObject("storeTotalRecord",name);
 		return total_pages;
 	}
 
-	static int view_rows = 5; // 페이지의 개수
-	static int counts = 5; // 한 페이지에 나타낼 상품의 개수
+	static int view_rows = 20; // 페이지의 개수
+	static int counts = 20; // 한 페이지에 나타낼 상품의 개수
 	
 	
 	@Override
@@ -57,7 +57,7 @@ public class StoreDAO_iBatis implements StoreDAO {
 			name = "%";
 		}
 
-		int totalRecord = totalRecord(name);
+		int totalRecord = storeTotalRecord(name);
 
 		startRow = (tpage - 1) * counts ;
 		endRow = startRow + counts - 1;
@@ -73,7 +73,7 @@ public class StoreDAO_iBatis implements StoreDAO {
 	public String pageNumber(int tpage, String name) throws SQLException {
 		String str = "";
 
-		int total_pages = totalRecord(name);
+		int total_pages = storeTotalRecord(name);
 		int page_count = total_pages / counts + 1;
 
 		if (total_pages % counts == 0) {
