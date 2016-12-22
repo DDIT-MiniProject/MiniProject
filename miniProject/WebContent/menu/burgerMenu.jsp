@@ -83,6 +83,7 @@
                	  <%-- <a href="#"><img src="<%=request.getContextPath()%>/images/delivery/듀오팩.png" width="180px" height="190px"></a>
                	  <a href="#"><img src="<%=request.getContextPath()%>/images/delivery/싱글팩.png" width="180px" height="190px"></a> --%>
                	  
+
                	  <c:forEach items="${productList}" var="productVO">
   
      			 <a href="menuDetail.do?pseq=${productVO.pseq }"><img src="<%=request.getContextPath()%>/images/burgermenu/${productVO.name }.png" width="180px" height="190px"></a>
