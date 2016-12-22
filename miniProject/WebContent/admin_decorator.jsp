@@ -73,13 +73,9 @@ footer {
 #hh{
     width:225px;
     height:400px;
-    color:#003800
+   
 }
-h2{color:#000000
-}
-.navbar{
-  background:#003800
-}
+
 </style>
 
 </head>
@@ -92,9 +88,9 @@ h2{color:#000000
 				<li><a href="#home" class="w3-margin-left"><img
 						src="<%=request.getContextPath()%>/images/log.png"></a></li>
 				<li class="w3-right w3-hide-small"><a href="#"> <span
-						class="glyphicon glyphicon-log-in"></span>Login
-				</a> <a href="#"> <span class="glyphicon glyphicon-log-in"></span>Join
-				</a> <a href="#"> <span class="glyphicon glyphicon-user"></span>Admin
+						class="glyphicon glyphicon-log-in"></span>Logout
+				</a>
+				<br><a href="#"> <span class="glyphicon glyphicon-user"></span>Admin
 				</a></li>
 				<li><a href="#about" class="w3-left"><img src="<%=request.getContextPath()%>/images/order.png"></a> 
 					<a href="menuForm.do" class="w3-left"><img src="<%=request.getContextPath()%>/images/menu.png"></a> 
@@ -143,7 +139,7 @@ h2{color:#000000
     </div>
   </div>
 </div>
-
+<br>
 	<!-- 헤더 -->
 	
 	<footer class="container-fluid text-center">
