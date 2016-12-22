@@ -29,5 +29,7 @@
 	<select id="listMember" parameterClass="str" resultClass="member">
 		select * from member where name like '%'||#name#||'%' order by indate desc
 	</select>
+	
+	
 
 </sqlMap>

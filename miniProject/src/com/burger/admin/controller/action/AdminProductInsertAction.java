@@ -31,10 +31,9 @@ public class AdminProductInsertAction implements Action {
 
 		MultipartRequest multi = new MultipartRequest(request, uploadFilePath,
 				sizeLimit, "UTF-8", new DefaultFileRenamePolicy());
-		 String check = multi.getParameter("kind");
-		 String kind=kindCheck(check);
+	
 		ProductVO productVO = new ProductVO();
-		productVO.setKind(kind);
+		productVO.setKind(multi.getParameter("kind"));
 		productVO.setName(multi.getParameter("name"));
 		productVO.setPrice2(Integer.parseInt(multi.getParameter("price2")));
 		productVO.setContent(multi.getParameter("content"));

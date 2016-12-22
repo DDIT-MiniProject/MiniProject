@@ -19,7 +19,7 @@ public class AdminMemberListAction implements Action {
   public String execute(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
 
-    String url = "member/memberList.jsp";
+    String url = "user/UserList.jsp";
     String key = "";
     if (request.getParameter("key") != null) {
       key = request.getParameter("key");
