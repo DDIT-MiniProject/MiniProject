@@ -79,8 +79,8 @@ footer {
 				<li><a href="<%=request.getContextPath()%>/index.jsp" class="w3-margin-left"><img
 						src="<%=request.getContextPath()%>/images/log.png"></a></li>
 				<li class="w3-right w3-hide-small">
-					<a href="#"> <span class="glyphicon glyphicon-log-in"></span>Login</a> 
-					<a href="#"> <span class="glyphicon glyphicon-log-in"></span>Join</a> 
+					<a href="loginForm.do"> <span class="glyphicon glyphicon-log-in"></span>Login</a> 
+					<a href="joinForm.do"> <span class="glyphicon glyphicon-log-in"></span>Join</a> 
 					<a href="adminMain.do"> <span class="glyphicon glyphicon-user"></span>Admin</a>
 				</li>
 				
