@@ -22,6 +22,7 @@ public class ControllerAction extends HttpServlet {
 
 	@Override
 	public void init(ServletConfig config) throws ServletException {
+		/*loadProperties("com/burger/properties/log4j");*/
 		loadProperties("com/burger/properties/Command");
 
 	}
