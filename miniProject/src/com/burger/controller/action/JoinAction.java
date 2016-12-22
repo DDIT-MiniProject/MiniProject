@@ -45,7 +45,7 @@ public class JoinAction implements Action {
 			e.printStackTrace();
 		}
 		
-		session.setAttribute("id", request.getParameter("id"));		
+		session.setAttribute("id", request.getParameter("id"));
 		return url;
 	}
 

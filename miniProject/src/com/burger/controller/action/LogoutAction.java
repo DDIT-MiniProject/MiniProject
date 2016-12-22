@@ -12,18 +12,14 @@ import javax.servlet.http.HttpSession;
 import com.burger.dto.MemberVO;
 
 
-public class LoginFormAction implements Action {
+public class LogoutAction implements Action {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String url = "orderLayoutForm.jsp";
+		String url = "index.do";
 		HttpSession session = request.getSession();
-		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
-		
-		if (loginUser != null) {
-			url = "index.do";
-		} 
+		session.removeAttribute("loginUser");
 		
 		return url;	
 	}

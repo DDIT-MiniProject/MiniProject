@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@ taglib prefix="decorator" uri="http://www.opensymphony.com/sitemesh/decorator"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,9 +80,19 @@ footer {
 				<li><a href="<%=request.getContextPath()%>/index.jsp" class="w3-margin-left"><img
 						src="<%=request.getContextPath()%>/images/log.png"></a></li>
 				<li class="w3-right w3-hide-small">
-					<a href="loginForm.do"> <span class="glyphicon glyphicon-log-in"></span>Login</a> 
-					<a href="joinForm.do"> <span class="glyphicon glyphicon-log-in"></span>Join</a> 
-					<a href="adminMain.do"> <span class="glyphicon glyphicon-user"></span>Admin</a>
+				<c:choose>
+					<c:when test="${sessionScope.loginUser ne null}">
+						<a href="logout.do"> <span class="glyphicon glyphicon-log-in"></span>Logout</a><br>
+						
+						<a href="adminMain.do"> <span class="glyphicon glyphicon-user"></span>Admin</a>
+					</c:when>
+					<c:otherwise>
+						<a href="loginForm.do"> <span class="glyphicon glyphicon-log-in"></span>Login</a>
+						<a href="joinForm.do"> <span class="glyphicon glyphicon-log-in"></span>Join</a>
+						<a href="adminMain.do"> <span class="glyphicon glyphicon-user"></span>Admin</a>
+					</c:otherwise>
+				</c:choose>
+					
 				</li>
 				
 				<li>
