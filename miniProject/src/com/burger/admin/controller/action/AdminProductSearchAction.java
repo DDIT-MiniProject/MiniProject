@@ -18,31 +18,36 @@ public class AdminProductSearchAction implements Action {
 	@Override
 	public String execute(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		 String url ="product/ProductSearch.jsp";
+		request.setCharacterEncoding("utf-8");
+		 String url ="product/pproductList.jsp";
 		
-		 String searchID = request.getParameter("searchID");
+		 String key = request.getParameter("key");
 		 String tpage= request.getParameter("tpage");
-		 String msg="";
+		 System.out.println(key);
+		 System.out.println(tpage);
 		 
-		 if (searchID == null) {
-			 searchID = "";
+	
+		 if (key == null) {
+			 key = "";
+			 
 			}
 			if (tpage == null) {
-				tpage = "1"; // 현재 페이지 (default 1)
+				System.out.println("2");
+				tpage = "1"; // �쁽�옱 �럹�씠吏� (default 1)
 			} else if (tpage.equals("")) {
 				tpage = "1";
 			}
-			request.setAttribute("key", searchID);
+			request.setAttribute("key", key);
 			request.setAttribute("tpage", tpage);
-		 
+			
 		 ProductDAO productDAO = ProductDAO_iBatis.getInstance();
 		 
 		 ArrayList<ProductVO> productList =null;
 		 String paging=null;
 		 
 		 try {
-			productList =productDAO.listProduct(Integer.parseInt(tpage), searchID);
-			paging = productDAO.pageNumber(Integer.parseInt(tpage),searchID);
+			productList =productDAO.listProduct(Integer.parseInt(tpage), key);
+			paging = productDAO.pageNumber(Integer.parseInt(tpage),key);
 		 } catch (NumberFormatException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -19,15 +19,16 @@ public class AdminProductListAction implements Action {
   public String execute(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
 
-    String url = "product/productList.jsp";
+    String url = "product/pproductList.jsp";
     
     String key=request.getParameter("key");
     String tpage=request.getParameter("tpage");
+    System.out.println(tpage+"111");
     if(key==null){
      key="";
     }    
     if(tpage== null){
-      tpage="1"; //현재 페이지 (default 1)                        
+      tpage="1"; //�쁽�옱 �럹�씠吏� (default 1)                        
     }else if(tpage.equals("")){
        tpage="1";  
     }
