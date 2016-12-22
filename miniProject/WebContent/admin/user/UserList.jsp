@@ -17,21 +17,15 @@
 	width: 400px
 }
 </style>
-<script type="text/javascript">
-	$(function() {
-		$('#totalBtn').click(function() {
-			$(location).attr('href', 'adminProductInsertForm.do');
-		});
-	});
-</script>
+
 <div class="container">
 	<h2>회원리스트</h2>
 	<form name="frm" method="post"
-		action="adminProductSearch.do?tpage=${tpage }">
+		action="adminMemberSearch.do">
 		<div class="input-group">
 			<span class="input-group-addon"><i
-				class="glyphicon glyphicon-gift"></i></span> <input id="email" type="text"
-				class="form-control" name="key" placeholder="상품명">
+				class="glyphicon glyphicon-user"></i></span> <input id="email" type="text"
+				class="form-control" name="key" placeholder="회원명">
 		</div>
 		<Br>
 		<button type="submit" class="btn btn-default">검색</button>

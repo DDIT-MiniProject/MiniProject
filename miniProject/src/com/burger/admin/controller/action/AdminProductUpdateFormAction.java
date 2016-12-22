@@ -20,17 +20,19 @@ public class AdminProductUpdateFormAction implements Action {
 		String url = "product/ProductUpdate.jsp";
 
 	    String pseq = (String)request.getParameter("pseq").trim();
+	    System.out.println(pseq+"이건 수정용 pseq");
      
 	    /*ProductDAO productDAO = ProductDAO_JDBC.getInstance();*/
 	    ProductDAO productDAO = ProductDAO_iBatis.getInstance();
 	    ProductVO productVO=null;
 		try {
 			productVO = productDAO.getProduct(pseq);
+			request.setAttribute("productVO", productVO);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 
-	    request.setAttribute("productVO", productVO);
+	    
 
 	    
 	    String tpage = "1";

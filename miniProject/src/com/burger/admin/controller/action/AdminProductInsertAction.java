@@ -32,8 +32,11 @@ public class AdminProductInsertAction implements Action {
 		MultipartRequest multi = new MultipartRequest(request, uploadFilePath,
 				sizeLimit, "UTF-8", new DefaultFileRenamePolicy());
 	
+		
+		System.out.println(multi.getParameter("kind")+"이게 카인드");
+		String kind =kindCheck(multi.getParameter("kind"));
 		ProductVO productVO = new ProductVO();
-		productVO.setKind(multi.getParameter("kind"));
+		productVO.setKind(kind);
 		productVO.setName(multi.getParameter("name"));
 		productVO.setPrice2(Integer.parseInt(multi.getParameter("price2")));
 		productVO.setContent(multi.getParameter("content"));
@@ -54,18 +57,18 @@ public class AdminProductInsertAction implements Action {
 	public String kindCheck(String kind) {
 		String result = "0";
 
-		if (kind.equals("스페셜오퍼")) {
+		if (kind.equals("1")) {
               result="12";
 		}
-		if (kind.equals("딜리버리팩")) {
+		if (kind.equals("2")) {
               result="13";
-		}if(kind.equals("세트메뉴")){
+		}if(kind.equals("3")){
 			  result="14";
-		}if(kind.equals("버거")){
+		}if(kind.equals("4")){
 			  result="15";
-		}if(kind.equals("사이드")){
+		}if(kind.equals("5")){
 			  result="16";
-		}if(kind.equals("드링크")){
+		}if(kind.equals("6")){
 			 result="17";
 		}
 		return result;

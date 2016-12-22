@@ -18,6 +18,7 @@ public class AdminOrderSearchAction implements Action{
 	@Override
 	public String execute(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
 		String url="order/OrderList.jsp";
 		String key = request.getParameter("key");
 		

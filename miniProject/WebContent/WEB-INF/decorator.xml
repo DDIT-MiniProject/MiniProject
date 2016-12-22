@@ -9,6 +9,9 @@
 	</decorator>
 	
 	<excludes>
+	<pattern>/admin/adminLoginForm.do</pattern>
+	<pattern>/admin/adminLogin.do</pattern>
+	
 	
 	</excludes>
 	

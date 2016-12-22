@@ -26,35 +26,30 @@ public class AdminProductUpdate implements Action {
 		HttpSession session = request.getSession();
 
 		int sizeLimit = 5 * 1024 * 1024;
-		String savePath = "product_images";
+		String savePath = "images";
 		ServletContext context = session.getServletContext();
 		String uploadFilePath = context.getRealPath(savePath);
 
-		MultipartRequest multi = new MultipartRequest(request, // 1. �슂泥� 媛앹껜
-				uploadFilePath, // 2. �뾽濡쒕뱶�맆 �뙆�씪�씠 ���옣�맆 �뙆�씪 寃쎈줈紐�
-				sizeLimit, // 3. �뾽濡쒕뱶�맆 �뙆�씪�쓽 理쒕� �겕湲�(5Mb)
-				"UTF-8", // 4. �씤肄붾뵫 ���엯 吏��젙
-				new DefaultFileRenamePolicy() // 5. �뜮�뼱�벐湲곕�� 諛⑹� �쐞�븳 遺�遺�
-		); // �씠 �떆�젏�쓣 湲고빐 �뙆�씪�� �씠誘� ���옣�씠 �릺�뿀�떎
-
+		MultipartRequest multi = new MultipartRequest(request, 
+				uploadFilePath,
+				sizeLimit,  
+				"UTF-8", 
+				new DefaultFileRenamePolicy() 
+		); 
+        String kind = kindCheck(multi.getParameter("kind"));
 		ProductVO productVO = new ProductVO();
 		productVO.setPseq(Integer.parseInt(multi.getParameter("pseq")));
-		productVO.setKind(multi.getParameter("kind"));
+		productVO.setKind(kind);
 		productVO.setName(multi.getParameter("name"));
-		productVO.setPrice1(Integer.parseInt(multi.getParameter("price1")));
 		productVO.setPrice2(Integer.parseInt(multi.getParameter("price2")));
-		productVO.setPrice3(Integer.parseInt(multi.getParameter("price2"))
-				- Integer.parseInt(multi.getParameter("price1")));
 		productVO.setContent(multi.getParameter("content"));
-		productVO.setUseyn(multi.getParameter("useyn"));
-		productVO.setBestyn(multi.getParameter("bestyn"));
 		if (multi.getFilesystemName("image") == null) {
 			productVO.setImage(multi.getParameter("nonmakeImg"));
 		} else {
 			productVO.setImage(multi.getFilesystemName("image"));
 		}
 
-		/* ProductDAO productDAO = ProductDAO_JDBC.getInstance(); */
+		
 		ProductDAO productDAO = ProductDAO_iBatis.getInstance();
 		try {
 			productDAO.updateProduct(productVO);
@@ -64,6 +59,26 @@ public class AdminProductUpdate implements Action {
 		}
 
 		return url;
+	}
+	
+	public String kindCheck(String kind) {
+		String result = "0";
+
+		if (kind.equals("1")) {
+              result="12";
+		}
+		if (kind.equals("2")) {
+              result="13";
+		}if(kind.equals("3")){
+			  result="14";
+		}if(kind.equals("4")){
+			  result="15";
+		}if(kind.equals("5")){
+			  result="16";
+		}if(kind.equals("6")){
+			 result="17";
+		}
+		return result;
 	}
 	
 

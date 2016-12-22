@@ -58,4 +58,10 @@ public class MemberDAO_iBatis implements MemberDAO {
 		return memberList;
 	}
 
+	@Override
+	public int totalMember(String member_name) throws SQLException {
+		   int result = (int) client.queryForObject("totalMember", member_name);
+		return result;
+	}
+
 }

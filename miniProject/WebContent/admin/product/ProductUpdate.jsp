@@ -1,104 +1,67 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-  pageEncoding="UTF-8"%>
-  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-<%-- <%@ include file="/admin/header.jsp"%> --%>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<article>
-<br>
-<h1>상품 상세정보 변경</h1>  
-<form name="frm" method="post" enctype="multipart/form-data">
-<input type="hidden" name="pseq" value="${productVO.pseq}">
-<input type="hidden" name="code" >
-<input type="hidden" name="nonmakeImg" value="${productVO.image}">
-<table id="list">
-  <tr>
-    <th class="btn btn-default">상품분류</th>&nbsp;&nbsp;&nbsp;&nbsp;
-    <td colspan="5">
-    <select name="kind">
-      <c:forEach items="${kindList}" var="kind" varStatus="status">
-        <c:choose>
-          <c:when test="${productVO.kind==status.count}">
-            <option value="${status.count}" selected="selected">${kind}</option>
-          </c:when>
-          <c:otherwise>
-            <option value="${status.count}">${kind}</option>
-          </c:otherwise>
-        </c:choose>
-      </c:forEach>
-    </select> 
-    </td>
-  </tr>
-  <tr>
-    <th>상품명</th>
-    <td width="343" colspan="5">
-      <input type="text" name="name" size="47" maxlength="100" value="${productVO.name}">
-    </td>
-  </tr>
-  <tr>
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
     
-    <th>판매가[B]</th>
-    <td width="70">
-      <input type="text" name="price2" size="11" onBlur="go_ab()" onKeyUp='NumFormat(this)' value="${productVO.price2}">
-    </td>
-  </tr>
-  <tr>
-    <th>베스트상품</th>
-    <td>
-      <c:choose>
-        <c:when test='${productVO.bestyn=="y"}'>
-          <input type="checkbox" name="bestyn" value="y" checked="checked">
-        </c:when>
-        <c:otherwise>
-          <input type="checkbox" name="bestyn" value="n">
-        </c:otherwise>
-      </c:choose>
-    </td>        
-    <th>사용유무</th>
-    <td>
-      <c:choose>
-        <c:when test='${productVO.useyn=="y"}'>
-          <input type="checkbox" name="useyn" value="y" checked="checked">
-        </c:when>
-      <c:otherwise>
-        <input type="checkbox" name="useyn" value="n">
-      </c:otherwise>
-    </c:choose>
-    </td>
-  </tr>
-  <tr>
-    <th>상세설명</th>
-    <td colspan="5">
-      <textarea name="content" rows="8" cols="70" >${productVO.content}</textarea>
-    </td>
-  </tr>
-  <tr>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<br>
+
+
+<form name="frm" method="post" enctype="multipart/form-data" action="adminProductUpdate.do">
+<div class="container">
+  <h2>상품 등록</h2>
+  <h3>Taste is King</h3>            
+  <table id="list" class="table table-condensed">
+    <thead>
+      <tr>
+        <th width="100px">상품분류</th>
+        <td><select name="kind">
+        <c:forEach items="${kindList }" var="kind" varStatus="status">
+          <option value="${status.count }">${kind }
+          
+          </option>
+          
+        </c:forEach>
+        </select></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <th>상품번호</th>
+      <td><input type="text" class="form-control" name="pseq" value="${productVO.pseq }" readonly></td>
+      <td>
+      </tr>
+      <tr>
+        <th>상품명</th>
+        <td><input type="text" class="form-control" name="name" value="${productVO.name }"></td>
+      </tr>
+      <tr>
+        <th>가격</th>
+        <td><input type="text" class="form-control" name="price2" value="${productVO.price2 }"></td>
+      </tr>
+      <tr>
+        <th>상세설명</th>
+        <td><textarea class="form-control" name="content">${productVO.content }</textarea></td>
+      </tr>
+      <tr>
     <th>상품이미지</th>
-    <td colspan="5">
-      <img src="<c:url value="/product_images"/>/${productVO.image}" width="200pt" />     
-      <br>
+    <td>
+   
       <input type="file" name="image">
-    </td> 
+    </td>
   </tr>    
-</table>
-<input class="btn" type="button" value="수정" onClick="go_mod_save('${tpage}','${productVO.pseq}')">           
-<input class="btn" type="button" value="취소" onClick="go_mov()">
-</form> 
-</article>
-<%-- <%@ include file="/admin/footer.jsp"%> --%>
+            
+      </tbody>
+      </table>
+      
+      <button type="submit" class="btn btn-default">변경</button>
+      <button type="button" class="btn btn-default">취소</button>
+      </div>
+      </form>
 </body>
 </html>

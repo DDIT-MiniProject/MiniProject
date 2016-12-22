@@ -9,34 +9,28 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.burger.controller.action.Action;
-import com.burger.dao.MemberDAO;
-import com.burger.dao.iBatis.MemberDAO_iBatis;
-import com.burger.dto.MemberVO;
+import com.burger.dao.QnaDAO;
+import com.burger.dao.iBatis.QnaDAO_iBatis;
+import com.burger.dto.QnaVO;
 
-public class AdminMemberSearchAction implements Action {
+public class AdminQnaListAction implements Action{
 
 	@Override
 	public String execute(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
-		String url="user/UserList.jsp";
+		String url="qna/QnaList.jsp";
 		
-		String key=request.getParameter("key");
-		
-		MemberDAO memberDAO = MemberDAO_iBatis.getInstance();
-		ArrayList<MemberVO> memberList=null;
-		
-		
+		QnaDAO qnaDAO = QnaDAO_iBatis.getInstance();
+		ArrayList<QnaVO> qnaList =null;
+	    
 		try {
-			memberList=memberDAO.listMember(key);
+			qnaList=qnaDAO.listAllQna();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		request.setAttribute("memberList", memberList);
-		
-		
+		request.setAttribute("qnaList",qnaList);
 		return url;
 	}
 
