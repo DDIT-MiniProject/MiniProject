@@ -48,6 +48,7 @@
 </head>
 <body>
    <form action="">
+   <div class="container-fluid text-center">
          <div class="row content">
             <div class="col-sm-2 sidenav">
                <p>
@@ -59,7 +60,9 @@
                <p>
                   <a href="<%=request.getContextPath()%>/qna/notice/notice.jsp">공지사항</a>
                </p>
-               
+               <p>
+                  <a href="<%=request.getContextPath()%>/qna/board/list.jsp">일반게시판</a>
+               </p>
                
                
             </div>
@@ -150,6 +153,7 @@
             
             
          </div>
+      </div>
       </div>
 
    </form>

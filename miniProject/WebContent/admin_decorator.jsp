@@ -87,10 +87,10 @@ footer {
 			<ul class="w3-navbar w3-white w3-wide w3-card-2">
 				<li><a href="#home" class="w3-margin-left"><img
 						src="<%=request.getContextPath()%>/images/log.png"></a></li>
-				<li class="w3-right w3-hide-small"><a href="#"> <span
+				<li class="w3-right w3-hide-small"><a href="<%=request.getContextPath() %>/index.do"> <span
 						class="glyphicon glyphicon-log-in"></span>Logout
 				</a>
-				<br><a href="#"> <span class="glyphicon glyphicon-user"></span>Admin
+				<br><a href="adminMain.do"> <span class="glyphicon glyphicon-user"></span>Admin
 				</a></li>
 				<li><a href="#about" class="w3-left"><img src="<%=request.getContextPath()%>/images/order.png"></a> 
 					<a href="menuForm.do" class="w3-left"><img src="<%=request.getContextPath()%>/images/menu.png"></a> 

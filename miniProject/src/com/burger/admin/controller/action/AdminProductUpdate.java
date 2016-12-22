@@ -58,6 +58,7 @@ public class AdminProductUpdate implements Action {
 		ProductDAO productDAO = ProductDAO_iBatis.getInstance();
 		try {
 			productDAO.updateProduct(productVO);
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
