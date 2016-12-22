@@ -17,7 +17,11 @@
    
 <script>
 function cart_go(form){
-	location.href="<%=request.getContextPath()%>/cartInsert.do?pseq=${productVO.pseq}"
+	alert('장바구니에 ${productVO.name} 상품이 담겼습니다');
+	form.method="post";
+	form.action="cartInsert.do";
+	form.submit();
+	<%-- location.href="<%=request.getContextPath()%>/cartInsert.do?pseq=${productVO.pseq}&pname=${producrVO.name}&price2=${productVO.price2}"; --%>
 }
 </script>
 <style>
@@ -93,7 +97,14 @@ table{
               		<table>
               			<tr><td colspan="3"><img src="<%=request.getContextPath()%>/images/menu/${productVO.name }.png" width="350px" height="370px"></td></tr>
               			<tr>
-              				<td><button type="button" class="btn btn-warning btn-lg" onclick="cart_go(this.form)">장바구니</button></td>
+              				<td>수량 : 
+              					<select name="quantity">
+	              					<c:forEach var="i" begin="1" end="10">
+	              						<option>${i}</option>
+	              					</c:forEach>
+              					</select>
+              				</td>
+              				<td><button type="button" class="btn btn-warning btn-lg" onclick="cart_go(this.form)">장바구니 담기</button></td>
               				<td><button type="button" class="btn btn-primary btn-lg" onclick="">주문하기</button></td>
               			</tr>
               		</table>

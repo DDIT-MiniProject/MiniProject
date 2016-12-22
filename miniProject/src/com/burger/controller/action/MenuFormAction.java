@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.burger.dao.ProductDAO;
 import com.burger.dao.iBatis.ProductDAO_iBatis;
@@ -35,7 +36,7 @@ public class MenuFormAction implements Action{
 			e.printStackTrace();
 		}
 	    
-
+		
 	    request.setAttribute("productList",productList);
 		
 		return url;
