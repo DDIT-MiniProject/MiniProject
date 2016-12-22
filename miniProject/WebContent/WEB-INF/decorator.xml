@@ -8,8 +8,9 @@
 		<pattern>/admin/*</pattern>
 	</decorator>
 	
-	<excludes>
-	
+	<excludes> 
+		<pattern>/findZipNum.do*</pattern>
+		<pattern>/idCheckForm.do*</pattern>
 	</excludes>
 	
 	
