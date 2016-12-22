@@ -7,25 +7,25 @@ import com.burger.dto.ProductVO;
 
 public interface ProductDAO {
 
-	// 신상품 리스트 얻어오기.
+	// �떊�긽�뭹 由ъ뒪�듃 �뼸�뼱�삤湲�.
 	public ArrayList<ProductVO> listNewProduct() throws SQLException;
 
-	// 베스트 상품 리스트 얻어오기
+	// 踰좎뒪�듃 �긽�뭹 由ъ뒪�듃 �뼸�뼱�삤湲�
 	public ArrayList<ProductVO> listBestProduct() throws SQLException;
 
-	// 상품번호로 상품정보 한개 가져오기
+	// �긽�뭹踰덊샇濡� �긽�뭹�젙蹂� �븳媛� 媛��졇�삤湲�
 	public ProductVO getProduct(String pseq) throws SQLException;
 
-	// 상품종류별 상품 리스트 얻어오기
+	// �긽�뭹醫낅쪟蹂� �긽�뭹 由ъ뒪�듃 �뼸�뼱�삤湲�
 	public ArrayList<ProductVO> listKindProduct(String kind)
 			throws SQLException;
 
 	/*
-	 * 관리자페이지에서 사용되는 메서드
+	 * 愿�由ъ옄�럹�씠吏��뿉�꽌 �궗�슜�릺�뒗 硫붿꽌�뱶
 	 */
 	public int totalRecord(String product_name) throws SQLException;
 
-	// 페이지 이동을 위한 메소드
+	// �럹�씠吏� �씠�룞�쓣 �쐞�븳 硫붿냼�뱶
 	public String pageNumber(int tpage, String name) throws SQLException;
 	
 	public ArrayList<ProductVO> listProduct(int tpage, String product_name) throws SQLException;
@@ -33,4 +33,6 @@ public interface ProductDAO {
 	public int insertProduct(ProductVO product) throws SQLException;
 	
 	public int updateProduct(ProductVO product) throws SQLException;
+	
+	public int deleteProduct(String pseq) throws SQLException;
 }
