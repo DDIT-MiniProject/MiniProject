@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원 유무 확인 페이지</title>
+<title>BURGERKING MENU</title>
 
 <link rel="stylesheet"
    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -14,6 +14,12 @@
    src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script
    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   
+<script>
+function cart_go(form){
+	location.href="<%=request.getContextPath()%>/cartForm.do?pseq=${productVO.pseq}"
+}
+</script>
 <style>
 /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
 .row.content {
@@ -45,6 +51,10 @@
    width: 80%;
    color: gray;
 }
+
+table{
+	text-align:center;
+}
 </style>
 </head>
 <body>
@@ -75,31 +85,19 @@
                </p>
             </div>
             <div class="col-sm-8 text-left">
-            	<strong><h2>${productVO.name }</h2></strong>
+            	<strong><h3>${productVO.name }</h3></strong>
                <p>
-                  <img src="<%=request.getContextPath()%>/images/주문시유의사항.png" id="warning">
+                  <%-- <img src="<%=request.getContextPath()%>/images/주문시유의사항.png" id="warning"> --%>
                </p>
-               <%-- <c:forEach var="special" items="list">
-               <div>
-               	  <a href="#"><img src="<%=request.getContextPath()%>/images/specialmenu/리치테이스트팩1.png" width="180px" height="190px"></a>
-               	  <a href="#"><img src="<%=request.getContextPath()%>/images/specialmenu/리치테이스트팩2.png" width="180px" height="190px"></a>
-               	  <a href="#"><img src="<%=request.getContextPath()%>/images/specialmenu/리치테이스트팩3.png" width="180px" height="190px"></a>
-               	  <a href="#"><img src="<%=request.getContextPath()%>/images/specialmenu/스테이크버거.png" width="180px" height="190px"></a>
-               	 </div>
-               	 <div>
-               	  <a href="#"><img src="<%=request.getContextPath()%>/images/specialmenu/스테이크버거세트.png" width="180px" height="190px"></a>
-               	  <a href="#"><img src="<%=request.getContextPath()%>/images/specialmenu/리치테이스트오리지널.png" width="180px" height="190px"></a>
-               	  <a href="#"><img src="<%=request.getContextPath()%>/images/specialmenu/리치테이스트오리지널세트.png" width="180px" height="190px"></a>
-               </div>
-               </c:forEach> --%>
-               
-               
-                 <c:forEach items="${productList}" var="productVO">
-  
-     			 <a href="#"><img src="<%=request.getContextPath()%>/images/specialmenu/${productVO.name }.png" width="180px" height="190px"></a>
-
-   				 </c:forEach>
-    
+              
+              		<table>
+              			<tr><td colspan="3"><img src="<%=request.getContextPath()%>/images/menu/${productVO.name }.png" width="350px" height="370px"></td></tr>
+              			<tr>
+              				<td><button type="button" class="btn btn-warning btn-lg" onclick="cart_go(this.form)">장바구니</button></td>
+              				<td><button type="button" class="btn btn-primary btn-lg" onclick="">주문하기</button></td>
+              			</tr>
+              		</table>
+                  
             </div>
          </div>
       </div>

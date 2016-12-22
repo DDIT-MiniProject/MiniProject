@@ -73,6 +73,16 @@
 						<td>수량</td>
 						<td>상품가격</td>
 						<td>비고</td>
+						
+						<c:forEach items="${carttList}" var="cartVO">
+						<tr>
+							<td>${cartVO.cseq }</td>
+							<td>${cartVO.quantity }</td>
+							<td>${cartVO.result }</td>
+							<td><a href="#">수정</a>/<a href="#">삭제</a></td>
+						</tr>
+						</c:forEach>
+						
 					</tr>
 				</table>
             </div>
