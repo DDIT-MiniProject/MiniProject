@@ -9,15 +9,61 @@
 <script type="text/javascript">
 function join_go(form){
 	var test = document.getElementById('agreeCheck');
-	if($(agreeCheck).prop("checked")){
+	  if (form.id.value == "") {
+	    alert("아이디를 입력하여 주세요.");
+	    form.id.focus();
+	  } else if (form.id.value != form.reid.value) {
+	    alert("중복확인을 클릭하여 주세요.");
+	    document.formm.id.focus(); 
+	  } else if (form.pwd.value == "") {
+	    alert("비밀번호를 입력해 주세요.");
+	    form.pwd.focus();
+	  } else if ((form.pwd.value != form.pwdCheck.value)) {
+	    alert("비밀번호가 일치하지 않습니다.");
+	    form.pwd.focus();
+	  } else if (form.name.value == "") {
+	    alert("이름을 입력해 주세요.");
+	    form.name.focus();
+	  } else if (form.email.value == "") {
+	    alert("이메일을 입력해 주세요.");
+	    form.email.focus();
+	  } else if (form.zipNum.value==""){
+		  alert("주소검색을 해주세요");
+	  } else if(form.phone.value == ""){
+		  alert("휴대폰번호를 입력해주세요");
+		  form.pwd.focus();
+	  } else {
+		  form.action = "join.do";
+		  form.submit(); 
+	  }
+	 /*  if($(agreeCheck).prop("checked")){
+			
+	  }else{
+			alert("이용약관 동의체크 !")			  
+	  } */
+	
+}	
+/* 	var test = document.getElementById('agreeCheck');
+	if($(agreeCheck).prop("unchecked",false)){
 		form.action = "join.do";
 		form.submit(); 
 	}else{
 		alert("수집목적 동의에 체크를 해주세요");
 	}
+} */
+function idcheck(form) {
+	 if (form.id.value == "") {
+	    alert('아이디를 입력하여 주십시오.');
+	    form.id.focus();
+	    return;
+	  }
+	  var url = "idCheckForm.do?id="+ form.id.value;
+	  window.open( url, "_blank_1","toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=400, height=200");
 }
-
-
+function searchZip(form){
+	  var url = "findZipNum.do";
+	  window.open( url, "_blank_1","toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=550, height=300, top=300, left=300, ");
+}
 </script>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -30,14 +76,12 @@ function join_go(form){
 .row.content {
 	height: 450px
 }
-
 /* Set gray background color and 100% height */
 .sidenav {
 	padding-top: 20px;
 	background-color: #f1f1f1;
 	height: 100%;
 }
-
 @media screen and (max-width: 767px) {
 	.sidenav {
 		height: auto;
@@ -55,15 +99,16 @@ function join_go(form){
 	margin: auto;
 	width: 80%;
 	color: gray;
+	font-family: "궁서체" ,"Times New Roman", Georgia, Serif;
 }
-#joinTable{
+/* #btn{
 	font-size: 30pt;
 	font-family: "1훈하얀고양이" ,"Times New Roman", Georgia, Serif;
-}
+} */
 </style>
 </head>
 <body>
-	<form action="">
+	<form name="form"action="join.do">
 		<div class="container-fluid text-center">
 			<div class="row content">
 				<div class="col-sm-2 sidenav">
@@ -225,42 +270,56 @@ function join_go(form){
     						<tr>
     							<td>회원가입</td>
     							<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-    							<td><input type="text" id="id" placeholder="아이디를 입력해주세요"/>
-    									<input type="button" class="btn btn-danger btn-lg" value="중복 체크" onclick="idcheck(this.form)">
+    							<td><input type="text" name="id" placeholder="아이디를 입력해주세요"/>
+    								<input type="hidden"    name="reid">
+    								<input type="button" id="btn" class="btn btn-danger btn-lg" value="중복 체크" onclick="idcheck(this.form)">
     						</td>
     						</tr>
     						
     						<tr>
     							<td></td>
-    							<td></td><td><input type="password" id="pwd" placeholder="비밀번호를 입력해주세요"/></td>
+    							<td></td><td><input type="password" name="pwd" placeholder="비밀번호를 입력해주세요"/></td>
     						</tr>
     						
     						<tr>
     							<td></td>
-    							<td></td><td><input type="password" id="pwdCheck" placeholder="입력 비밀번호와 동일"/></td>
+    							<td></td><td><input type="password" name="pwdCheck" placeholder="입력 비밀번호와 동일"/></td>
     						</tr>
     						
     						<tr>
     							<td></td>
-    							<td></td><td><input type="text" id="name" placeholder="이름을 입력해주세요"/></td>
+    							<td></td><td><input type="text" name="name" placeholder="이름을 입력해주세요"/></td>
+    						</tr>
+    						
+    						<tr>
+    							<td></td>
+    							<td></td><td><input type="text" name="email" placeholder="email을 입력해주세요" size="30"/></td>
     						</tr>
     						<tr>
     							<td></td>
-    							<td></td><td><input type="text" id="zip_code" placeholder="우편번호를 입력해주세요"/></td>
+    							<td></td><td><input type="text" name="zipNum" placeholder="우편번호!!"readonly/></td>
     						</tr>
     						<tr>
     							<td></td>
-    							<td></td><td><input type="text" id="address" placeholder="주소를 입력해주세요"/></td>
+    							<td></td>
+    							<td><input type="text" name="addr1" placeholder="주소검색!!!☞☞☞☞" size="30" readonly/>
+    							    <input type="button" id="btn" class="btn btn-danger btn-lg" value="주소검색" onclick="searchZip(this.form)">
+    							</td>
     						</tr>
     						<tr>
     							<td></td>
-    							<td></td><td><input type="text" id="phone" placeholder="휴대폰번호를 입력해주세요"/></td>
+    							<td></td>
+    							<td><input type="text" name="add2" placeholder="상세주소를 입력해주세요!!!" /></td>
+    							</tr>
+    						<tr>
+    							<td></td>
+    							<td></td><td><input type="text" name="phone" placeholder="휴대폰번호를 입력해주세요"/></td>
     						</tr>
     						<tr>
     						<td></td>
     						<td></td>
-    							<td><input type="button" class="btn btn-warning btn-lg" value="HOME"onclick="location.href='<%=request.getContextPath()%>/index.jsp'"/>
-    							<input type="button" class="btn btn-warning btn-lg" value="가입"onclick="join_go(this.form)"/></td>
+    							<td><input type="button" id="btn" class="btn btn-warning btn-lg" value="HOME"onclick="location.href='<%=request.getContextPath()%>/index.jsp'"/>
+    							<input type="button" id="btn" class="btn btn-warning btn-lg" value="가입"onclick="join_go(this.form)"/></td>
     						</tr>
 					</table>
 					<%-- <img src="<%=request.getContextPath()%>/images/videoMain.jpg" id="joinImage"> --%>

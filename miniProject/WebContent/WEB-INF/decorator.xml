@@ -12,7 +12,9 @@
 	<pattern>/admin/adminLoginForm.do</pattern>
 	<pattern>/admin/adminLogin.do</pattern>
 	
-	
+		<pattern>/findZipNum.do*</pattern>
+		<pattern>/idCheckForm.do*</pattern>
+
 	</excludes>
 	
 	

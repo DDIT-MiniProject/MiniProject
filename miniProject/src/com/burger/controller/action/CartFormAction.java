@@ -23,8 +23,6 @@ public class CartFormAction implements Action{
 
 		String url="/cart/cartForm.jsp";
 		
-		String pseq=request.getParameter("pseq");
-		
 		HttpSession session = request.getSession();
 		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
 

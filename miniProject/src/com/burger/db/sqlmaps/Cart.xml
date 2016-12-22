@@ -9,8 +9,8 @@
 	<typeAlias alias="cart" type="com.burger.dto.CartVO" />
 	
 	<insert id="insertCart" parameterClass="cart" >
-		insert into cart(cseq,id, pseq, quantity)
-				values(cart_seq.nextval,#id#,#pseq#,#quantity#)
+		insert into cart(cseq,id, pseq, quantity,mname,pname,price2)
+				values(cart_seq.nextval,#id#,#pseq#,#quantity#,#mname#,#pname#,#price2#)
 	</insert>	
 	
 	<select id="listCart" parameterClass="str" resultClass="cart">

@@ -13,7 +13,34 @@
    src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script
    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+   
+<script>
+function menu_go(){
+	location.href="menuForm.do";
+};
+function update_go(form){
+	form.method="post";
+	form.action="cartUpdate.do";
+	form.submit();
+};
+function delte_go(){
+	location.href="deleteCart.do?cseq=${cartVO.cseq }";
+};
+</script>
 <style>
+
+.input-group {
+	width: 400px
+}
 /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
 .row.content {
    height: 450px
@@ -48,6 +75,19 @@
 table{
 	text-align : center;
 }
+
+table #total{
+	text-align : right;
+}
+table .total{
+	height : 50px;
+	font-size: 20px;
+	font-weight: bold;
+}
+table th{
+	text-align : center;
+	width : 1px;
+}
 </style>
 
 </head>
@@ -71,21 +111,51 @@ table{
 					<li>버거킹 최소 배달 금액은 8,000원 입니다.</li>
 				</ul>
 				<hr color="grey"/>
-				<table>
+				<table class="table">
 					<tr>
-						<td width="100px">상품명</td>
-						<td width="100px">수량</td>
-						<td width="100px">상품가격</td>
-						<td width="100px">비고</td>
+						<th>상품명</th>
+						<th>수량</th>
+						<th>상품가격</th>
+						<th>비고</th>
 						
 						<c:forEach items="${cartList}" var="cartVO">
 						<tr>
-							<td>${cartVO.cseq }</td>
-							<td>${cartVO.quantity }</td>
-							<td>${cartVO.id }</td>
-							<td><a href="#">수정</a>/<a href="#">삭제</a></td>
+							<td><img src="<%=request.getContextPath()%>/images/menu/${cartVO.pname }.png" width="30px" height="30px"/>${cartVO.pname }</td>
+							<%-- <td>${cartVO.quantity }</td> --%>
+							<td>
+							<select name="quantity">
+	              					<c:forEach var="i" begin="1" end="10">
+	              						<c:choose>
+	              							<c:when test="${cartVO.quantity eq i }">
+	              								<option selected=${i }>${i }</option>
+	              							</c:when>
+	              							<c:otherwise>
+	              								<option>${i}</option>
+	              							</c:otherwise>
+	              						</c:choose>
+	              					</c:forEach>
+              					</select>
+              				</td>
+							<td>${cartVO.price2*cartVO.quantity }원</td>
+							<td><a href="cartUpdate.do?cseq=${cartVO.cseq }">수정</a>/<a href="deleteCart.do?cseq=${cartVO.cseq }">삭제</a></td>
+							<!-- <td>
+								<button type="button" class="btn btn-warning btn-sm" onclick="">수정</button>/
+								<button type="button" class="btn btn-primary btn-sm" onclick="delete_go()">삭제</button>
+							</td> -->
 						</tr>
+						
 						</c:forEach>
+						<tr class="total">
+							<td colspan=3 id="total">총가격  :</td>
+							<td>${totalPrice }원</td>
+							
+						</tr>
+						<tr height="50">
+							<td colspan="4">
+								<button type="button" class="btn btn-warning btn-sm" onclick="menu_go()">메뉴로 돌아가기</button>&nbsp;&nbsp;&nbsp;
+								<button type="button" class="btn btn-primary btn-sm" onclick="">주문하기</button>
+							</td>
+						</tr>
 						
 					</tr>
 				</table>
