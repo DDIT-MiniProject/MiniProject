@@ -13,18 +13,26 @@
   .input-group{width:400px}
  
   </style>
+  <script type="text/javascript">
+  $(function(){
+	$('#savebtn').click(function(){
+	   $(location).attr('href','adminOrderSave.do');	
+	});  
+  
+  });
+  </script>
 
  
 
   <div class="container">
   <h2>주문리스트</h2>
-  <form name="frm" method="post">
+  <form name="frm" method="post" action="adminOrderSearch.do">
 <div class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-shopping-cart"></i></span>
       <input id="email" type="text" class="form-control" name="key" placeholder="주문자 성명">
     </div>
     <br>
-    <button type="button" class="btn btn-default">검색</button>
+    <button type="submit" class="btn btn-default">검색</button>
     
     
     
@@ -68,7 +76,7 @@
   </table>
   
   <input type="button" class="btn btn-default" style="width: 200px"
-      value="배송처리(입금확인)" onClick="go_order_save()">
+      value="배송처리(입금확인)" id="savebtn" onClick="go_order_save()">
     
      </div>    
 </form>

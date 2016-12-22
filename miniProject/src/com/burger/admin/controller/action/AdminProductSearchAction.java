@@ -24,7 +24,7 @@ public class AdminProductSearchAction implements Action {
 		 String key = request.getParameter("key");
 		 String tpage= request.getParameter("tpage");
 		 System.out.println(key);
-		 System.out.println(tpage);
+		 System.out.println(tpage+"이건수정페이지 tpage");
 		 
 	
 		 if (key == null) {
@@ -32,10 +32,9 @@ public class AdminProductSearchAction implements Action {
 			 
 			}
 			if (tpage == null) {
-				System.out.println("2");
-				tpage = "1"; // �쁽�옱 �럹�씠吏� (default 1)
+				tpage = "1"; 
 			} else if (tpage.equals("")) {
-				tpage = "1";
+				
 			}
 			request.setAttribute("key", key);
 			request.setAttribute("tpage", tpage);

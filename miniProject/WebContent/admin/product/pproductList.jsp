@@ -20,7 +20,7 @@
 <script type="text/javascript">
 $(function(){
 	$('#totalBtn').click(function(){
-		$(location).attr('href', 'adminProductUpdateForm.do');
+		$(location).attr('href', 'adminProductInsertForm.do');
 	});
 });
 </script>
@@ -68,7 +68,8 @@ $(function(){
 											${productVO.name} </a></td>
 									<td><fmt:formatNumber value="${productVO.price2}" /></td>
 									<td><fmt:formatDate value="${productVO.indate}" /></td>
-									<td><a href="adminProductUpdateForm.do?pseq=${productVO.pseq }">수정</a>/삭제</td>
+									<td><a href="adminProductUpdateForm.do?pseq=${productVO.pseq }">수정</a>
+									/<a href="adminProductDeleteForm.do?pseq=${productVO.pseq }">삭제</a></td>
 								</tr>
 							</c:forEach>
 
