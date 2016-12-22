@@ -22,17 +22,17 @@ public class CartUpdateAction implements Action{
 			HttpServletResponse response) throws ServletException, IOException {
 
 		String url = "cartForm.do";
-		String pseq = request.getParameter("pseq");
+		String cseq = request.getParameter("cseq");
 		
 		HttpSession session = request.getSession();
 		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
-		ProductVO product = (ProductVO) session.getAttribute("productVO");
+		CartDAO cartDAO = CartDAO_iBatis.getInstance();
 		
 		if (loginUser != null) { //임시방편으로 not null
 			url = "loginForm.do";
 		} else {
-			CartVO cartVO = new CartVO();
-			cartVO.setId("one");
+			CartVO cartVO = cartDAO.getCart(cseq);
+			cartVO.setId(cartVO.getId());
 			cartVO.setPseq(product.getPseq());
 			cartVO.setQuantity(Integer.parseInt(request.getParameter("quantity")));
 			cartVO.setPname(product.getName());

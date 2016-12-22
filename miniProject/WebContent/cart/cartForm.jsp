@@ -32,6 +32,9 @@ function update_go(form){
 	form.action="cartUpdate.do";
 	form.submit();
 };
+function delte_go(){
+	location.href="deleteCart.do?cseq=${cartVO.cseq }";
+};
 </script>
 <style>
 
@@ -134,7 +137,11 @@ table th{
               					</select>
               				</td>
 							<td>${cartVO.price2*cartVO.quantity }원</td>
-							<td><a href="#">수정</a>/<a href="deleteCart.do?cseq=${cartVO.cseq }">삭제</a></td>
+							<td><a href="cartUpdate.do?cseq=${cartVO.cseq }">수정</a>/<a href="deleteCart.do?cseq=${cartVO.cseq }">삭제</a></td>
+							<!-- <td>
+								<button type="button" class="btn btn-warning btn-sm" onclick="">수정</button>/
+								<button type="button" class="btn btn-primary btn-sm" onclick="delete_go()">삭제</button>
+							</td> -->
 						</tr>
 						
 						</c:forEach>
@@ -146,7 +153,7 @@ table th{
 						<tr height="50">
 							<td colspan="4">
 								<button type="button" class="btn btn-warning btn-sm" onclick="menu_go()">메뉴로 돌아가기</button>&nbsp;&nbsp;&nbsp;
-								<button type="button" class="btn btn-primary btn-sm" onclick="update_go(this.form)">주문하기</button>
+								<button type="button" class="btn btn-primary btn-sm" onclick="">주문하기</button>
 							</td>
 						</tr>
 						
