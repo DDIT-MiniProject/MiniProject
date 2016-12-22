@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원 유무 확인 페이지</title>
+<title>BURGERKING MENU</title>
 
 <link rel="stylesheet"
    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -83,9 +83,10 @@
                	  <%-- <a href="#"><img src="<%=request.getContextPath()%>/images/delivery/듀오팩.png" width="180px" height="190px"></a>
                	  <a href="#"><img src="<%=request.getContextPath()%>/images/delivery/싱글팩.png" width="180px" height="190px"></a> --%>
                	  
+
                	  <c:forEach items="${productList}" var="productVO">
   
-     			 <a href="#"><img src="<%=request.getContextPath()%>/images/burgermenu/${productVO.name }.png" width="180px" height="190px"></a>
+     			 <a href="menuDetail.do?pseq=${productVO.pseq }"><img src="<%=request.getContextPath()%>/images/burgermenu/${productVO.name }.png" width="180px" height="190px"></a>
 
    				 </c:forEach>
                	  
