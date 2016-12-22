@@ -1,5 +1,7 @@
 package com.burger.dto;
 
+import java.util.ArrayList;
+
 public class StoreVO {
 	private String name;
 	private String address;
@@ -23,7 +25,6 @@ public class StoreVO {
 	public void setTime(String time) {
 		this.time = time;
 	}
-	
 	
 	
 }
