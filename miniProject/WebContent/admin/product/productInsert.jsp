@@ -22,10 +22,38 @@
         <th width="100px">상품분류</th>
         <td><select name="kind">
         <c:forEach items="${kindList }" var="kind" varStatus="status">
-          <option value="${status.count }">${kind }</option>
+          <option value="${status.count }">${kind }
+          
+          </option>
+          
         </c:forEach>
         </select></td>
+       <%--  <th>
+        <c:choose>
+        <c:when test="${kind eq '스페셜오퍼'}">
+        <input type="text" name=kind value="12">
+        </c:when>
         
+        <c:when test="${kind eq '딜리버리팩'}">
+        <input type="text" name=kind value="13">
+        </c:when>
+        
+        
+        <c:when test="${kind eq '딜리버리'}">
+        <input type="text" name=kind value="12">
+        </c:when>
+        
+        
+        <c:when test="${kind eq '스페셜오퍼'}">
+        <input type="text" name=kind value="12">
+        </c:when>
+        
+        
+        <c:when test="${kind eq '스페셜오퍼'}">
+        <input type="text" name=kind value="12">
+        </c:when>
+        </c:choose>
+        </th> --%>
       </tr>
     </thead>
     <tbody>

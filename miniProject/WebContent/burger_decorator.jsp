@@ -92,7 +92,7 @@ footer {
 						<a href="adminMain.do"> <span class="glyphicon glyphicon-user"></span>Admin</a>
 					</c:otherwise>
 				</c:choose>
-					
+
 				</li>
 				
 				<li>

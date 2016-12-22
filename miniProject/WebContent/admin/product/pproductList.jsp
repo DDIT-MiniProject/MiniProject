@@ -45,6 +45,7 @@ $(function(){
 				<thead>
 					<tr>
 						<th>번호</th>
+						<th>상품분류</th>
 						<th>상품명</th>
 						<th>가격</th>
 						<th>제품등록일</th>
@@ -63,6 +64,17 @@ $(function(){
 							<c:forEach items="${productList }" var="productVO">
 								<tr>
 									<td align="center">${productVO.pseq }</td>
+									
+									
+									<td><c:choose><c:when test="${productVO.kind eq '12'}">스페셜오퍼</c:when>
+									<c:when test="${productVO.kind eq '13'}">딜리버리팩</c:when>
+									<c:when test="${productVO.kind eq '14'}">세트메뉴</c:when>
+									<c:when test="${productVO.kind eq '15'}">버거</c:when>
+									<c:when test="${productVO.kind eq '16'}">사이드</c:when>
+									<c:when test="${productVO.kind eq '17'}">드링크</c:when>
+									<c:otherwise>${productVO.kind }</c:otherwise>
+									</c:choose>
+									</td>
 									<td><a href="#"
 										onClick="go_detail('${tpage}', '${productVO.pseq}')">
 											${productVO.name} </a></td>

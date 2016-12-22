@@ -20,6 +20,8 @@ public class AdminOrderSaveAction implements Action {
 		
 		String[] resultArr=request.getParameterValues("result");
 		
+			System.out.println(request.getParameterValues("result"));
+		
 		for(String oseq:resultArr){
 			OrderDAO orderDAO = OrderDAO_iBatis.getInstance();
 			

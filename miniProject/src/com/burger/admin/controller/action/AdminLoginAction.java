@@ -37,9 +37,10 @@ public class AdminLoginAction implements Action {
 	    	session.setAttribute("workerId", workerId);
 	    	url="adminMain.do";
 	    } else if (result ==0){
-	    	msg ="비밀번호오류입니다.";
+	    	msg ="아이디오류입니다.";
 	    } else if (result ==-1){
-	    	msg="아이디오류입니다.";
+	    	msg="비밀번호오류입니다.";
+	    
 	    }
 	    request.setAttribute("message", msg);
 	    return url;

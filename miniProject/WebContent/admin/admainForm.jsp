@@ -18,13 +18,14 @@
   </style>
 </head>
 <body>
+ <form name="frm" method="post" action="adminMemberList.do">
 <div class="container">
  <br>
   <div class="well">
  
 	  <h1><strong>환영합니다. 'Admin'님.</strong></h1>
   	  <h3>오늘 하루 기분은 어떠신가요???</h3>
-  <button type="button" class="btn btn-success">Manage Users>></button>
+  <button type="submit" class="btn btn-success">Manage Users>></button>
   </div>
 </div>
 
@@ -38,7 +39,7 @@
     </thead>
      <tbody>
       <tr>
-        <td> <span class="badge"><h3>12</h3></span></td>
+        <td> <span class="badge"><h3>${result }</h3></span></td>
         <td> <span class="badge"><h3>12</h3></span></td>
         <td> <span class="badge"><h3>12</h3></span></td>
       </tr>
@@ -73,6 +74,6 @@
     
     
     
-
+</form>
 </body>
 </html>

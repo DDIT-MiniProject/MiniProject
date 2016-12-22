@@ -36,7 +36,7 @@
 	</select>
 
 	<select id="listProduct" parameterClass="str" resultClass="product">
-		select pseq, indate, name, price1, price2, useyn, bestyn
+		select pseq, kind,indate, name, price1, price2, useyn, bestyn
 		from product
 		where name like '%'||#name#||'%' order by pseq desc
 	</select>
@@ -50,8 +50,8 @@
 
 	<update id="updateProduct" parameterClass="product">
 		update product set
-		kind=#kind#, useyn=#useyn#, name=#name#, price1=#price1#, price2=#price2#, price3=#price3#, content=#content#,
-		image=#image#, bestyn=#bestyn#
+		kind=#kind#, name=#name#, price2=#price2#,  content=#content#,
+		image=#image#
 		where pseq=#pseq#
 	</update>
 	
