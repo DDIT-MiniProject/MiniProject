@@ -82,10 +82,11 @@ footer {
 				<li class="w3-right w3-hide-small">
 				<c:choose>
 					<c:when test="${sessionScope.loginUser ne null}">
-						<a href="logout.do"> <span class="glyphicon glyphicon-log-in"></span>Logout</a><br>
-						
-						<a href="adminMain.do"> <span class="glyphicon glyphicon-user"></span>Admin</a>
+						<br>
+						<a href="logout.do"> <span class="glyphicon glyphicon-log-in"></span>Logout</a>
+						<br>
 					</c:when>
+					
 					<c:otherwise>
 						<a href="loginForm.do"> <span class="glyphicon glyphicon-log-in"></span>Login</a>
 						<a href="joinForm.do"> <span class="glyphicon glyphicon-log-in"></span>Join</a>

@@ -42,7 +42,7 @@ public class QnaDAO_iBatis implements QnaDAO {
 	}
 
 	/* *
-	 * 愿�由ъ옄 紐⑤뱶�뿉�꽌 �븘�슂�븳 硫붿냼�뱶
+	 * 愿?由ъ옄 紐⑤뱶?뿉?꽌 ?븘?슂?븳 硫붿냼?뱶
 	 */
 	public ArrayList<QnaVO> listAllQna() throws SQLException {
 		ArrayList<QnaVO> qnaList = new ArrayList<QnaVO>();

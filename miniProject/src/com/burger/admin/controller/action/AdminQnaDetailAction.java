@@ -21,7 +21,7 @@ public class AdminQnaDetailAction implements Action {
     String url = "qna/qnaDetail.jsp";
 
     String qseq = request.getParameter("qseq").trim();
-    System.out.println(qseq+"ÀÌ°ÍÀº ana qseq");
+    System.out.println(qseq+"ì´ê²ƒì€ ana qseq");
 
  
     QnaDAO qnaDAO = QnaDAO_iBatis.getInstance();

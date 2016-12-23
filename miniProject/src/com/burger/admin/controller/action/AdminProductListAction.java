@@ -28,7 +28,7 @@ public class AdminProductListAction implements Action {
      key="";
     }    
     if(tpage== null){
-      tpage="1"; //�쁽�옱 �럹�씠吏� (default 1)                        
+      tpage="1"; //占쎌겱占쎌삺 占쎈읂占쎌뵠筌욑옙 (default 1)                        
     }else if(tpage.equals("")){
          
     }

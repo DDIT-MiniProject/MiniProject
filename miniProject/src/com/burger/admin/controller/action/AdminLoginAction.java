@@ -37,9 +37,9 @@ public class AdminLoginAction implements Action {
 	    	session.setAttribute("workerId", workerId);
 	    	url="adminMain.do";
 	    } else if (result ==0){
-	    	msg ="¾ÆÀÌµğ¿À·ùÀÔ´Ï´Ù.";
+	    	msg ="ì•„ì´ë””ì˜¤ë¥˜ì…ë‹ˆë‹¤.";
 	    } else if (result ==-1){
-	    	msg="ºñ¹Ğ¹øÈ£¿À·ùÀÔ´Ï´Ù.";
+	    	msg="ë¹„ë°€ë²ˆí˜¸ì˜¤ë¥˜ì…ë‹ˆë‹¤.";
 	    
 	    }
 	    request.setAttribute("message", msg);

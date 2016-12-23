@@ -336,7 +336,7 @@ jQuery.easing['jswing']=jQuery.easing['swing'];jQuery.extend(jQuery.easing,{def:
 
 
 /*
- *  ì…€ë ‰íŠ¸ ë°•ìŠ¤ ë””ìžì¸
+ *  챙?╈궗챘 ?걘?졖?챘째?▣?졖?챘?앪씳?씸먄?씲?
  *  jQuery selectBox - A cosmetic, styleable replacement for SELECT elements
  *  Copyright 2012 Cory LaViska for A Beautiful Site, LLC.
  *  https://github.com/claviska/jquery-selectBox

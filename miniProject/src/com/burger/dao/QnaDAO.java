@@ -13,7 +13,7 @@ public interface QnaDAO {
   public void insertqna(QnaVO qnaVO, String session_id) throws SQLException;
 
   /* *
-   * 愿�由ъ옄 紐⑤뱶�뿉�꽌 �븘�슂�븳 硫붿냼�뱶
+   * 愿?由ъ옄 紐⑤뱶?뿉?꽌 ?븘?슂?븳 硫붿냼?뱶
    */
   public ArrayList<QnaVO> listAllQna() throws SQLException;
 
