@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@ taglib prefix="decorator" uri="http://www.opensymphony.com/sitemesh/decorator"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,24 +79,13 @@ footer {
 				<li><a href="<%=request.getContextPath()%>/index.jsp" class="w3-margin-left"><img
 						src="<%=request.getContextPath()%>/images/log.png"></a></li>
 				<li class="w3-right w3-hide-small">
-				<c:choose>
-					<c:when test="${sessionScope.loginUser ne null}">
-						<br>
-						<a href="logout.do"> <span class="glyphicon glyphicon-log-in"></span>Logout</a>
-						<br>
-					</c:when>
-					
-					<c:otherwise>
-						<a href="loginForm.do"> <span class="glyphicon glyphicon-log-in"></span>Login</a>
-						<a href="joinForm.do"> <span class="glyphicon glyphicon-log-in"></span>Join</a>
-						<a href="admin/adminLoginForm.do"> <span class="glyphicon glyphicon-user"></span>Admin</a>
-					</c:otherwise>
-				</c:choose>
-
+					<a href="loginForm.do"> <span class="glyphicon glyphicon-log-in"></span>Login</a> 
+					<a href="joinForm.do"> <span class="glyphicon glyphicon-log-in"></span>Join</a> 
+					<a href="adminMain.do"> <span class="glyphicon glyphicon-user"></span>Admin</a>
 				</li>
 				
 				<li>
-					<a href="loginForm.do" class="w3-left"><img src="<%=request.getContextPath()%>/images/order.png"></a> 
+					<a href="<%=request.getContextPath()%>/orderLayoutForm.jsp" class="w3-left"><img src="<%=request.getContextPath()%>/images/order.png"></a> 
 					<a href="<%=request.getContextPath()%>/menuForm.do"	class="w3-left"><img src="<%=request.getContextPath()%>/images/menu.png"></a> 
 					<a href="<%=request.getContextPath()%>/storeForm.do" class="w3-left w3-margin-right"><img src="<%=request.getContextPath()%>/images/store.png"></a> 
 					<a href="<%=request.getContextPath()%>/qnaView.do"  class="w3-left w3-margin-right"><img src="<%=request.getContextPath()%>/images/faq.png"></a>

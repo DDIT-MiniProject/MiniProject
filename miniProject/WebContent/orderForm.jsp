@@ -46,7 +46,7 @@ table {
 			<tr>
 				<td colspan="10">
 					<div id="non_member_order">
-						<strong><span>버거킹 주문하기</span></strong>
+						<strong><span>비회원 주문</span></strong>
 					</div>
 				</td>
 			</tr>
@@ -73,19 +73,12 @@ table {
 			<tr>
 				<td></td>
 				<td><input id="checkNonMember" type="checkbox" class="checkbox" />
-					개인정보동의, 개인정보 수집 및 이용에 모두 동의합니다.</td>
-				<td></td>
+					<span class="lbl">개인정보동의, 개인정보 수집 및 이용에 모두 동의합니다.</span></td>
 			</tr>
 			<tr>
 				<td><h5>주소 입력</h5></td>
-				<td><input type="text" name="addr"  size="33" placeholder="주소검색 버튼을 눌러주세요(자동입력)" readonly/>
-					<input type="button" name="searchAddr" class="btn btn-warning" value="주소검색"/></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td><input type="text" name="addr1" size="33" placeholder="상세주소를 입력해주세요"/></td>
-				<td></td>
+				<td><input type="text" name="non_addr" id="adress" size="33" />
+					<button type="button" class="btn btn-warning">주소 검색</button></td>
 			</tr>
 			
 			<tr>
@@ -104,7 +97,7 @@ table {
 			<tr>
 				<td></td>
 				<td>
-					<!-- <input type="button" class="btn btn-warning btn-lg" value="비회원 주문하기" onclick="non_order_go(this.form)"/> -->
+					<input type="button" class="btn btn-warning btn-lg" value="비회원 주문하기" onclick="non_order_go(this.form)"/>
 					<input type="button" class="btn btn-warning btn-lg" value="회원 주문하기" onclick="mem_order_go(this.form)"/>
 					<input type="button" class="btn btn-danger btn-lg" value="HOME"onclick="location.href='<%=request.getContextPath()%>/index.jsp'"/>
 				</td>
